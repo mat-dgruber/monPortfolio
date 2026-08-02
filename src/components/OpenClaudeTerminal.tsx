@@ -101,7 +101,7 @@ export default function OpenClaudeTerminal() {
         break;
       case 'about':
         outputResult =
-          'Matheus Diniz Gruber | Engenheiro de Software Pleno na CPB. Criador do Harpia (Go JIT VM) e adaptador do OpenClaude CLI (Multi-modelo & MCP Protocol).';
+          'Matheus Diniz Gruber | Engenheiro de Software Fullstack na CPB. Criador do Harpia (Go JIT VM) e adaptador/contribuidor do OpenClaude CLI (Multi-modelo & MCP Protocol).';
         break;
       case 'clear':
         setHistory([]);
