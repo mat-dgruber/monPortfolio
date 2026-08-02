@@ -3,12 +3,12 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://monportfolio.vercel.app'),
-  title: 'Matheus Diniz Gruber // Software Engineer & AI Architect',
-  description: 'Portfólio de Engenharia de Software Pleno, Compiladores (Harpia em Go) e Agentes de Inteligência Artificial Aplicada (OpenClaude com protocolo MCP).',
-  keywords: ['Software Engineer', 'Matheus Diniz Gruber', 'Go', 'TypeScript', 'Python', 'IA Aplicada', 'OpenClaude', 'Harpia', 'Casa Publicadora Brasileira'],
+  title: 'Matheus Diniz Gruber · Fullstack Engineer & UI/UX',
+  description: 'Portfolio profissional de Matheus Diniz Gruber: engenharia fullstack, UI/UX, arquitetura de sistemas, Angular, React e soluções com IA aplicada.',
+  keywords: ['Fullstack Engineer', 'Matheus Diniz Gruber', 'Angular', 'React', 'TypeScript', 'Python', 'UI/UX', 'IA Aplicada', 'Arquitetura de Software'],
   openGraph: {
-    title: 'Matheus Diniz Gruber // Software Engineer & AI Architect',
-    description: 'Engenheiro de Software Pleno especializado em Go, TypeScript, Python e IA Aplicada.',
+    title: 'Matheus Diniz Gruber · Fullstack Engineer & UI/UX',
+    description: 'Engenharia fullstack, UI/UX, arquitetura e soluções com IA aplicada para produtos técnicos confiáveis.',
     url: 'https://monportfolio.vercel.app',
     siteName: 'Matheus Diniz Gruber Portfolio',
     images: [
@@ -31,11 +31,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <body className="antialiased bg-slate-950 text-slate-100 selection:bg-cyan-500 selection:text-slate-950">
+      <body className="antialiased bg-slate-950 text-slate-100 selection:bg-blue-400/30 selection:text-white">
         {/* Skip to Content for Accessibility */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-slate-950 focus:font-mono focus:font-bold focus:rounded-md"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-400 focus:text-slate-950 focus:font-semibold focus:rounded-md"
         >
           Pular para o conteúdo principal
         </a>
