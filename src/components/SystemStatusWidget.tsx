@@ -15,7 +15,7 @@ interface HealthService {
 const SERVICES: HealthService[] = [
   { name: 'Harpia Direct-Threaded JIT VM', runtime: 'Go 1.23 / Native AST Parser', status: 'operational', latency: '~0.08ms (benchmark)', uptime: 'Disponível' },
   { name: 'OpenClaude MCP Protocol Adapter', runtime: 'Node.js 22 / Bun 1.3+', status: 'operational', latency: '~1.2ms (local)', uptime: 'Disponível' },
-  { name: 'Lamed Offline Sync Engine', runtime: 'Python 3.14 / FastAPI', status: 'operational', latency: '~0.42ms (cloud)', uptime: 'Disponível' },
+  { name: 'monFinTrack Secure Finance API', runtime: 'Python 3.13 / FastAPI', status: 'operational', latency: '~0.42ms (cloud)', uptime: 'Disponível' },
   { name: 'MonFinTrack Gemini AI Advisor', runtime: 'Python 3.13 / GenAI SDK', status: 'operational', latency: '~2.1ms (API)', uptime: 'Disponível' },
 ];
 
