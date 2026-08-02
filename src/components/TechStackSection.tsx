@@ -1,136 +1,79 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Cpu, Code2, Layers, Cloud, ShieldCheck, Wrench, Sparkles } from 'lucide-react';
-import { playSound } from '@/utils/audioManager';
 
-interface TechCategory {
+interface TechnicalAxis {
   title: string;
-  icon: any;
-  skills: { name: string; level: string; color: string }[];
+  description: string;
+  stack: string[];
+  proof: string;
 }
 
-const TECH_CATEGORIES: TechCategory[] = [
+const TECHNICAL_AXES: TechnicalAxis[] = [
   {
-    title: 'Linguagens de Programação',
-    icon: Code2,
-    skills: [
-      { name: 'Go', level: 'Especialista', color: 'border-cyan-500/40 text-cyan-300' },
-      { name: 'TypeScript', level: 'Avançado', color: 'border-sky-500/40 text-sky-300' },
-      { name: 'Python', level: 'Avançado', color: 'border-yellow-500/40 text-yellow-300' },
-      { name: 'JavaScript', level: 'Avançado', color: 'border-yellow-400/40 text-yellow-300' },
-      { name: 'Swift', level: 'Intermediário', color: 'border-orange-500/40 text-orange-300' },
-      { name: 'C++', level: 'Intermediário', color: 'border-blue-500/40 text-blue-300' },
-    ],
+    title: 'Front-end, UI/UX e produto',
+    description: 'Criação de interfaces em Angular e React com atenção a usabilidade, responsividade, hierarquia visual e fluxo de produto.',
+    stack: ['Angular', 'React', 'TypeScript', 'Tailwind CSS', 'UI/UX'],
+    proof: 'meuCPB, monFinTrack e redesign deste portfolio como vitrine de produto e experiência.',
   },
   {
-    title: 'Frontend & UI Frameworks',
-    icon: Layers,
-    skills: [
-      { name: 'Angular 20+', level: 'Avançado', color: 'border-red-500/40 text-red-300' },
-      { name: 'React / Next.js', level: 'Avançado', color: 'border-cyan-400/40 text-cyan-300' },
-      { name: 'Tailwind CSS', level: 'Avançado', color: 'border-teal-400/40 text-teal-300' },
-      { name: 'PrimeNG', level: 'Proficiente', color: 'border-red-400/40 text-red-300' },
-      { name: 'HTML5 & CSS3', level: 'Especialista', color: 'border-orange-400/40 text-orange-300' },
-    ],
+    title: 'Backend e sistemas confiáveis',
+    description: 'Construção de APIs, BFFs e fluxos de dados com atenção a consistência, manutenção e operação.',
+    stack: ['Python', 'FastAPI', 'Node.js', 'SQL Server', 'PostgreSQL'],
+    proof: 'meuCPB, monFinTrack e integrações corporativas em ambiente enterprise.',
   },
   {
-    title: 'Backend, Banco de Dados & Mensageria',
-    icon: Cpu,
-    skills: [
-      { name: 'FastAPI (Python)', level: 'Avançado', color: 'border-emerald-500/40 text-emerald-300' },
-      { name: 'Node.js', level: 'Avançado', color: 'border-green-500/40 text-green-300' },
-      { name: 'PostgreSQL', level: 'Avançado', color: 'border-blue-400/40 text-blue-300' },
-      { name: 'Firebase / Firestore', level: 'Avançado', color: 'border-amber-400/40 text-amber-300' },
-      { name: 'Redis', level: 'Proficiente', color: 'border-red-500/40 text-red-300' },
-      { name: 'SQLite', level: 'Avançado', color: 'border-sky-400/40 text-sky-300' },
-    ],
+    title: 'Arquitetura e integrações',
+    description: 'Organização de domínios, separação de camadas, integrações externas e automações que reduzem trabalho manual.',
+    stack: ['Clean Architecture', 'DDD', 'REST APIs', 'LDAP', 'Google APIs'],
+    proof: 'Arquitetura de desenvolvimento de ponta a ponta em produtos internos e educacionais.',
   },
   {
-    title: 'IA Aplicada, LLMs & Agentes',
-    icon: Sparkles,
-    skills: [
-      { name: 'Protocolo MCP', level: 'Especialista', color: 'border-purple-400/40 text-purple-300' },
-      { name: 'OpenAI / Gemini APIs', level: 'Avançado', color: 'border-cyan-400/40 text-cyan-300' },
-      { name: 'RAG & Vector Contexts', level: 'Avançado', color: 'border-indigo-400/40 text-indigo-300' },
-      { name: 'Ollama & Modelos Locais', level: 'Avançado', color: 'border-emerald-400/40 text-emerald-300' },
-      { name: 'DeepSeek / Claude', level: 'Avançado', color: 'border-blue-400/40 text-blue-300' },
-    ],
-  },
-  {
-    title: 'Nuvem, DevOps & Infraestrutura',
-    icon: Cloud,
-    skills: [
-      { name: 'Docker & Compose', level: 'Avançado', color: 'border-sky-500/40 text-sky-300' },
-      { name: 'Google Cloud (GCP)', level: 'Proficiente', color: 'border-blue-500/40 text-blue-300' },
-      { name: 'AWS Cloud', level: 'Proficiente', color: 'border-amber-500/40 text-amber-300' },
-      { name: 'GitHub Actions / CI/CD', level: 'Avançado', color: 'border-purple-500/40 text-purple-300' },
-      { name: 'Git & GitHub Workflows', level: 'Especialista', color: 'border-orange-500/40 text-orange-300' },
-    ],
-  },
-  {
-    title: 'Arquitetura & Engenharia Core',
-    icon: ShieldCheck,
-    skills: [
-      { name: 'Clean Architecture', level: 'Especialista', color: 'border-cyan-400/40 text-cyan-300' },
-      { name: 'Domain-Driven Design (DDD)', level: 'Especialista', color: 'border-purple-400/40 text-purple-300' },
-      { name: 'Design de Compiladores (AST)', level: 'Avançado', color: 'border-yellow-400/40 text-yellow-300' },
-      { name: 'Modernização de Legados', level: 'Avançado', color: 'border-emerald-400/40 text-emerald-300' },
-    ],
+    title: 'IA aplicada e automação',
+    description: 'Uso de LLMs como parte de produtos, agentes e fluxos reais, sem tratar IA como camada decorativa.',
+    stack: ['LLMs', 'RAG', 'Gemini API', 'Ollama', 'Agentes'],
+    proof: 'OpenClaude, monFinTrack e pós-graduação em andamento em Engenharia de IA Aplicada.',
   },
 ];
 
 export default function TechStackSection() {
   return (
-    <section id="tech-stack" className="py-20 px-6 max-w-6xl mx-auto z-10 relative">
-      <div className="text-center space-y-3 mb-14">
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-white font-sans flex items-center justify-center gap-3">
-          <Wrench className="w-8 h-8 text-cyan-400" /> Tecnologias &amp; Habilidades
-        </h2>
-        <p className="text-sm sm:text-base text-slate-300 font-sans max-w-2xl mx-auto leading-relaxed">
-          Stack tecnológica completa aplicada por Matheus Diniz no desenvolvimento de software enterprise, IA e compiladores.
-        </p>
-      </div>
+    <section id="technical-proof" className="relative z-10 px-6 py-24">
+      <div className="premium-shell space-y-10">
+        <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <h2 className="text-3xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
+            Profundidade técnica organizada por capacidade.
+          </h2>
+          <p className="text-lg leading-8 text-slate-300">
+            A stack importa quando evidencia capacidade de resolver problemas. Por isso, a prova técnica está agrupada em eixos de entrega, não em uma lista completa de ferramentas.
+          </p>
+        </div>
 
-      {/* Grid Categories */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {TECH_CATEGORIES.map((cat, idx) => {
-          const Icon = cat.icon;
-          return (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 25 }}
+        <div className="grid gap-5 md:grid-cols-2">
+          {TECHNICAL_AXES.map((axis, index) => (
+            <motion.article
+              key={axis.title}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="glass-cyber rounded-xl p-6 border border-sky-500/30 hover:border-cyan-400 transition-colors shadow-glow-cyan flex flex-col justify-between"
-              onMouseEnter={() => playSound('hover')}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{ duration: 0.42, delay: index * 0.04 }}
+              className="premium-card p-6"
             >
-              <div className="space-y-4">
-                <div className="flex items-center gap-2.5 border-b border-sky-500/20 pb-3">
-                  <div className="p-2 rounded-lg bg-slate-950 border border-sky-500/30 text-cyan-400">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-base font-bold text-white font-sans">{cat.title}</h3>
-                </div>
-
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {cat.skills.map((skill, sIdx) => (
-                    <div
-                      key={sIdx}
-                      className={`px-3 py-1.5 rounded-lg bg-slate-950 border ${skill.color} font-mono text-xs flex items-center justify-between gap-2`}
-                    >
-                      <span className="font-semibold">{skill.name}</span>
-                      <span className="text-[10px] text-slate-300 bg-slate-900 px-1.5 py-0.5 rounded border border-slate-800">
-                        {skill.level}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+              <h3 className="text-xl font-semibold text-white">{axis.title}</h3>
+              <p className="mt-3 leading-7 text-slate-300">{axis.description}</p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {axis.stack.map((item) => (
+                  <span key={item} className="rounded-full bg-slate-900 px-3 py-1 text-xs text-slate-300 ring-1 ring-slate-800">
+                    {item}
+                  </span>
+                ))}
               </div>
-            </motion.div>
-          );
-        })}
+              <p className="mt-5 border-t border-slate-800 pt-4 text-sm leading-6 text-slate-400">
+                <span className="font-semibold text-slate-200">Evidência:</span> {axis.proof}
+              </p>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
