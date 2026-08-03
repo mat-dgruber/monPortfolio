@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Mail } from 'lucide-react';
 
-export default function CyberFooter() {
+export default function SiteFooter() {
   return (
     <footer id="contact" className="relative z-10 border-t border-slate-800 px-6 py-20">
       <motion.div

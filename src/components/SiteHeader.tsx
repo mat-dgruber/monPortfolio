@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { label: 'Contato', href: '#contact' },
 ];
 
-export default function CyberHeader() {
+export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {

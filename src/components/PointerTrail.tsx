@@ -10,7 +10,7 @@ interface ParticleTrail {
   alpha: number;
 }
 
-export default function CyberCursor() {
+export default function PointerTrail() {
   const [position, setPosition] = useState({ x: -100, y: -100 });
   const [trails, setTrails] = useState<ParticleTrail[]>([]);
 

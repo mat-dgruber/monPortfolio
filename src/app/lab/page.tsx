@@ -1,4 +1,6 @@
-import CyberHeader from '@/components/CyberHeader';
+import Link from 'next/link';
+
+import SiteHeader from '@/components/SiteHeader';
 import HarpiaPlayground from '@/components/HarpiaPlayground';
 import OpenClaudeTerminal from '@/components/OpenClaudeTerminal';
 import SystemStatusWidget from '@/components/SystemStatusWidget';
@@ -11,9 +13,9 @@ export const metadata = {
 export default function LabPage() {
   return (
     <main id="main-content" className="relative overflow-hidden px-6 pb-20 pt-32">
-      <CyberHeader />
+      <SiteHeader />
       <section className="premium-shell space-y-5 pb-12">
-        <a href="/" className="accent-link text-sm">Voltar para home</a>
+        <Link href="/" className="accent-link text-sm">Voltar para home</Link>
         <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.03em] text-white sm:text-6xl">
           Laboratório de ferramentas, linguagens e agentes.
         </h1>
