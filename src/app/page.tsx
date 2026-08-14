@@ -1,12 +1,13 @@
-import SiteHeader from '@/components/SiteHeader';
-import HeroSection from '@/components/HeroSection';
-import ProjectGrid from '@/components/ProjectGrid';
-import TechStackSection from '@/components/TechStackSection';
-import AboutSection from '@/components/AboutSection';
-import CareerTimeline from '@/components/CareerTimeline';
-import CertificationsSection from '@/components/CertificationsSection';
-import LabSection from '@/components/LabSection';
-import SiteFooter from '@/components/SiteFooter';
+import SiteHeader from "@/components/SiteHeader";
+import HeroSection from "@/components/HeroSection";
+import ProjectGrid from "@/components/ProjectGrid";
+import TechStackSection from "@/components/TechStackSection";
+import AboutSection from "@/components/AboutSection";
+import CareerTimeline from "@/components/CareerTimeline";
+import CertificationsSection from "@/components/CertificationsSection";
+import LabSection from "@/components/LabSection";
+import SiteFooter from "@/components/SiteFooter";
+import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <CertificationsSection />
       <LabSection />
       <SiteFooter />
+      <WhatsAppFloatingButton />
     </main>
   );
 }

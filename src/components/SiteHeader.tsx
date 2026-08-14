@@ -1,13 +1,15 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
+import WhatsAppIcon from "./WhatsAppIcon";
+import { WHATSAPP_LINK } from "@/lib/constants";
 
 const NAV_ITEMS = [
-  { label: 'Cases', href: '#projects' },
-  { label: 'Prova técnica', href: '#technical-proof' },
-  { label: 'Trajetória', href: '#trajectory' },
-  { label: 'Lab', href: '#lab' },
-  { label: 'Contato', href: '#contact' },
+  { label: "Cases", href: "#projects" },
+  { label: "Prova técnica", href: "#technical-proof" },
+  { label: "Trajetória", href: "#trajectory" },
+  { label: "Lab", href: "#lab" },
+  { label: "Contato", href: "#contact" },
 ];
 
 export default function SiteHeader() {
@@ -18,8 +20,8 @@ export default function SiteHeader() {
       setScrolled(window.scrollY > 40);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -27,16 +29,23 @@ export default function SiteHeader() {
       <header
         className={`pointer-events-auto flex w-full max-w-5xl items-center justify-between gap-4 rounded-full border bg-slate-950/82 backdrop-blur-xl transition-all duration-300 ${
           scrolled
-            ? 'border-slate-700/80 px-5 py-2.5 shadow-lg shadow-black/20'
-            : 'border-slate-800 px-6 py-3'
+            ? "border-slate-700/80 px-5 py-2.5 shadow-lg shadow-black/20"
+            : "border-slate-800 px-6 py-3"
         }`}
       >
         <a href="#main-content" className="flex flex-col leading-tight">
-          <span className="text-sm font-semibold text-white">Matheus Diniz Gruber</span>
-          <span className="hidden text-xs text-slate-400 sm:block">Fullstack Engineer · UI/UX · IA Aplicada</span>
+          <span className="text-sm font-semibold text-white">
+            Matheus Diniz Gruber
+          </span>
+          <span className="hidden text-xs text-slate-400 sm:block">
+            Fullstack Engineer · UI/UX · IA Aplicada
+          </span>
         </a>
 
-        <nav aria-label="Navegação principal" className="hidden items-center gap-1 md:flex">
+        <nav
+          aria-label="Navegação principal"
+          className="hidden items-center gap-1 md:flex"
+        >
           {NAV_ITEMS.map((item) => (
             <a
               key={item.href}
@@ -49,10 +58,13 @@ export default function SiteHeader() {
         </nav>
 
         <a
-          href="#contact"
-          className="rounded-full bg-blue-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-blue-300 active:translate-y-px"
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-[#20ba59] active:translate-y-px"
         >
-          Conversar
+          <WhatsAppIcon className="h-4 w-4 fill-slate-950" />
+          <span>Conversar</span>
         </a>
       </header>
     </div>
