@@ -180,24 +180,24 @@ export default function HeroSection() {
             variants={heroItem}
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 220, damping: 24 }}
-            className="premium-card p-5"
+            className="premium-card p-4 sm:p-5"
             aria-label="Fluxo de entrega"
           >
-            <div className="flex items-center justify-between gap-4">
+            <div className="flex items-start justify-between gap-2 sm:items-center sm:gap-4">
               <div>
                 <p className="text-sm font-semibold text-white">
                   Do conceito ao deploy
                 </p>
-                <p className="mt-1 text-sm text-slate-400">
+                <p className="mt-1 text-xs sm:text-sm text-slate-400">
                   Arquitetura, experiência, código e publicação no mesmo fluxo.
                 </p>
               </div>
-              <span className="rounded-full border border-blue-400/25 bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-200">
+              <span className="shrink-0 rounded-full border border-blue-400/25 bg-blue-400/10 px-2.5 py-1 text-xs font-semibold text-blue-200">
                 end-to-end
               </span>
             </div>
 
-            <div className="mt-5 grid gap-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
               {DELIVERY_STEPS.map((step, index) => (
                 <motion.div
                   key={step}
@@ -208,12 +208,12 @@ export default function HeroSection() {
                     y: -2,
                     borderColor: "rgba(96, 165, 250, 0.38)",
                   }}
-                  className="rounded-2xl border border-slate-800 bg-slate-950/55 p-3"
+                  className="rounded-xl sm:rounded-2xl border border-slate-800 bg-slate-950/55 p-2.5 sm:p-3"
                 >
                   <span className="text-xs font-semibold text-blue-300">
                     0{index + 1}
                   </span>
-                  <p className="mt-2 text-sm leading-5 text-slate-200">
+                  <p className="mt-1 sm:mt-2 text-xs sm:text-sm leading-4 sm:leading-5 text-slate-200">
                     {step}
                   </p>
                 </motion.div>
