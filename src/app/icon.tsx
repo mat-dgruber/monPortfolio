@@ -14,19 +14,19 @@ export default function Icon() {
       <div
         style={{
           fontSize: 18,
-          background: '#030712',
+          background: '#0A0C0E',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#38bdf8',
-          borderRadius: 6,
-          fontWeight: 'bold',
-          border: '1px solid rgba(56, 189, 248, 0.4)',
+          color: '#EDE7DC',
+          borderRadius: 4,
+          fontWeight: 800,
+          border: '1px solid rgba(237, 231, 220, 0.25)',
         }}
       >
-        MD
+        MG
       </div>
     ),
     {
