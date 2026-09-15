@@ -48,8 +48,8 @@ export default function ContactForm() {
         playSound("execute");
         try {
           confetti({
-            particleCount: 80,
-            spread: 70,
+            particleCount: 70,
+            spread: 60,
             origin: { y: 0.6 },
           });
         } catch {}
@@ -73,14 +73,13 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="premium-card p-6 sm:p-8 space-y-6">
-      <div className="space-y-2">
-        <h3 className="text-xl font-semibold text-white">
+    <div className="tech-card p-6 sm:p-8 space-y-6">
+      <div className="space-y-1">
+        <h3 className="text-xl font-bold text-white tracking-tight">
           Enviar mensagem por email
         </h3>
-        <p className="text-sm text-slate-400">
-          Preencha os campos abaixo para me enviar uma mensagem direta por
-          email.
+        <p className="text-xs sm:text-sm text-slate-400">
+          Canal direto para propostas, projetos ou consultoria técnica.
         </p>
       </div>
 
@@ -90,27 +89,25 @@ export default function ContactForm() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            className="rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-6 text-center space-y-3"
+            className="rounded-md border border-emerald-500/30 bg-emerald-950/40 p-6 text-center space-y-3"
           >
             <CheckCircle2 className="h-10 w-10 text-emerald-400 mx-auto" />
-            <h4 className="text-lg font-semibold text-white">
+            <h4 className="text-lg font-bold text-white">
               Mensagem enviada com sucesso!
             </h4>
-            <p className="text-sm text-slate-300">
-              Obrigado pelo contato. Sua mensagem foi entregue e retornarei em
-              breve.
+            <p className="text-xs sm:text-sm text-slate-300">
+              Obrigado pelo contato. Retornarei o mais breve possível.
             </p>
             <button
               type="button"
               onClick={() => setStatus("idle")}
-              className="mt-2 inline-flex items-center justify-center rounded-xl bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-200 transition hover:bg-slate-700"
+              className="mt-2 inline-flex items-center justify-center rounded-md bg-slate-800 px-4 py-2 text-xs font-semibold text-slate-200 transition hover:bg-slate-700 font-mono"
             >
-              Enviar outra mensagem
+              ENVIAR OUTRA MENSAGEM
             </button>
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Honeypot for Spam Protection */}
             <input
               type="checkbox"
               name="botcheck"
@@ -118,11 +115,10 @@ export default function ContactForm() {
               style={{ display: "none" }}
             />
 
-            {/* Name */}
             <div>
               <label
                 htmlFor="contact-name"
-                className="block text-xs font-semibold text-slate-300 mb-1.5"
+                className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1"
               >
                 Seu Nome
               </label>
@@ -133,15 +129,14 @@ export default function ContactForm() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Ex: Carlos Silva"
-                className="w-full rounded-xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder-slate-500 transition focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
+                className="w-full rounded-md border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder-slate-500 transition focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
               />
             </div>
 
-            {/* Email */}
             <div>
               <label
                 htmlFor="contact-email"
-                className="block text-xs font-semibold text-slate-300 mb-1.5"
+                className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1"
               >
                 Seu Email
               </label>
@@ -152,15 +147,14 @@ export default function ContactForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Ex: carlos@empresa.com"
-                className="w-full rounded-xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder-slate-500 transition focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
+                className="w-full rounded-md border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder-slate-500 transition focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
               />
             </div>
 
-            {/* Message */}
             <div>
               <label
                 htmlFor="contact-message"
-                className="block text-xs font-semibold text-slate-300 mb-1.5"
+                className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1"
               >
                 Mensagem
               </label>
@@ -170,8 +164,8 @@ export default function ContactForm() {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Descreva seu projeto ou ideia..."
-                className="w-full rounded-xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder-slate-500 transition focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400 resize-none"
+                placeholder="Descreva seu projeto, escopo ou objetivo..."
+                className="w-full rounded-md border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-white placeholder-slate-500 transition focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50 resize-none"
               />
             </div>
 
@@ -179,7 +173,7 @@ export default function ContactForm() {
               <motion.div
                 initial={{ opacity: 0, y: -6 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-2 text-xs text-rose-400 bg-rose-950/40 border border-rose-500/30 rounded-xl p-3"
+                className="flex items-center gap-2 text-xs text-rose-400 bg-rose-950/40 border border-rose-500/30 rounded-md p-3"
               >
                 <AlertCircle className="h-4 w-4 shrink-0" />
                 <span>{errorMessage}</span>
@@ -189,17 +183,17 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-5 py-3.5 font-semibold text-slate-950 transition hover:bg-blue-400 active:translate-y-px disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-blue-950/30"
+              className="motion-safe-sheen flex w-full items-center justify-center gap-2 rounded-md bg-white px-5 py-3.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-950 transition hover:bg-slate-200 active:translate-y-px disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
             >
               {status === "submitting" ? (
                 <>
-                  <Loader2 className="h-5 w-5 animate-spin" />
-                  <span>Enviando mensagem...</span>
+                  <Loader2 className="h-4 w-4 animate-spin text-slate-950" />
+                  <span>PROCESSANDO ENVIO...</span>
                 </>
               ) : (
                 <>
-                  <Send className="h-4 w-4" />
-                  <span>Enviar Mensagem</span>
+                  <Send className="h-4 w-4 text-slate-950" />
+                  <span>ENVIAR MENSAGEM</span>
                 </>
               )}
             </button>

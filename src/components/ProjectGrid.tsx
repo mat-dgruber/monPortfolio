@@ -1,10 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Code2, FolderGit2 } from 'lucide-react';
 
 interface CaseStudy {
   id: string;
+  number: string;
   title: string;
   subtitle: string;
   context: string;
@@ -19,147 +20,185 @@ interface CaseStudy {
 const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'openclaude',
+    number: '01',
     title: 'OpenClaude',
-    subtitle: 'Adaptação e contribuição em CLI multi-provedor para agentes de código',
-    context: 'Projeto open-source para unificar automação de desenvolvimento orientada por IA no terminal.',
+    subtitle: 'CLI Multi-Provedor para Agentes de Código e Ferramentas MCP',
+    context: 'Projeto open-source para unificar e orquestrar automação de desenvolvimento guiada por modelos de IA no terminal.',
     problem: 'Fluxos com LLMs, MCP e múltiplos provedores tendem a ficar fragmentados entre CLIs, scripts e integrações isoladas.',
     role: 'Adaptação do projeto, contribuição em fluxos de uso, integração MCP, experiência terminal-first e suporte multi-modelo.',
-    stack: ['TypeScript', 'Node.js', 'Bun', 'MCP', 'LLM Function Calling'],
-    impact: 'Experiência centralizada para automação de código com múltiplos provedores, modelos e ferramentas externas.',
+    stack: ['TypeScript', 'Node.js', 'Bun', 'MCP Protocol', 'LLM Function Calling'],
+    impact: 'Ambiente unificado e de alto desempenho para automação de código com OpenAI, Anthropic, Gemini e modelos locais.',
     githubUrl: 'https://github.com/mat-dgruber/openclaude',
     architectureDetails: [
-      'Fluxos multi-provedor para OpenAI, Gemini, DeepSeek, Ollama local e Anthropic.',
-      'Integração com protocolo MCP para chamada de ferramentas externas.',
-      'Ajustes de experiência terminal-first, sessões e uso com codebases reais.',
+      'Fluxos multi-provedor com suporte a OpenAI, Gemini, DeepSeek, Ollama local e Anthropic.',
+      'Integração nativa com o protocolo MCP para execução de ferramentas e chamadas dinâmicas.',
+      'Arquitetura terminal-first com gerenciamento determinístico de sessões e histórico.',
     ],
   },
   {
     id: 'harpia',
+    number: '02',
     title: 'Harpia Programming Language',
-    subtitle: 'Linguagem reativa em português com VM em Go',
-    context: 'Projeto autoral de linguagem, compilador e runtime voltado a experimentação em sintaxe nativa PT-BR.',
-    problem: 'Explorar uma linguagem educacional/técnica exige parser, AST, runtime e ferramentas que conversem entre si.',
-    role: 'Desenho da linguagem, parser AST, VM JIT, exemplos de sintaxe e ferramentas auxiliares.',
-    stack: ['Go', 'AST Parser', 'JIT VM', 'CLI', 'DSL'],
-    impact: 'Demonstra profundidade em compiladores, runtimes e modelagem de ferramentas para desenvolvedores.',
+    subtitle: 'Linguagem Reativa em Português com Runtime e VM em Go',
+    context: 'Projeto autoral de compilador, parser AST e máquina virtual voltado à computação reativa com sintaxe nativa em português.',
+    problem: 'Construir uma linguagem de domínio exige dominar análise léxica, sintática, representação em árvore e execução em baixo nível.',
+    role: 'Concepção da gramática, parser AST, VM JIT, ecossistema de testes e CLI de diagnóstico.',
+    stack: ['Go', 'AST Parser', 'JIT VM', 'CLI', 'Language Design'],
+    impact: 'Demonstração de competência profunda em compiladores, estruturas de dados de baixo nível e runtimes.',
     githubUrl: 'https://github.com/mat-dgruber/harpia',
     architectureDetails: [
-      'Parser e representação AST para sintaxe em português.',
-      'Runtime reativo com simulação de sinais e eventos.',
-      'CLI para auditoria, compilação e geração de artefatos técnicos.',
+      'Parser sintático próprio com validação estática de tipos e árvore AST expressiva.',
+      'Runtime reativo com propagação de sinais e isolamento de escopos em Go.',
+      'Tooling completo com CLI para compilação, execução e inspeção de bytecodes.',
     ],
   },
   {
     id: 'monfintrack',
+    number: '03',
     title: 'monFinTrack',
-    subtitle: 'Plataforma financeira fullstack com Angular, FastAPI, Firebase e IA',
-    context: 'Produto de controle financeiro pessoal com dashboard, transações, orçamentos, multicontas, autenticação Firebase e insights com Google Gemini.',
-    problem: 'Gestão financeira pessoal precisa transformar dados fragmentados em visão clara, segura e acionável para o usuário.',
-    role: 'Atuação fullstack na arquitetura, UI/UX, front-end Angular, backend FastAPI, Firebase, integrações com IA e publicação do produto.',
-    stack: ['Angular', 'TypeScript', 'FastAPI', 'Firebase', 'Gemini API'],
-    impact: 'Entrega de uma plataforma financeira completa, com experiência responsiva, segurança, automações e IA aplicada a decisões financeiras.',
+    subtitle: 'Plataforma Financeira Fullstack com Angular, FastAPI e Insights de IA',
+    context: 'Sistema corporativo de gestão financeira com dashboards em tempo real, orçamentos, auditoria e motor de IA analítica.',
+    problem: 'Transformar volumes financeiros brutos em análises prescritivas seguras com isolamento estrito de dados multi-tenant.',
+    role: 'Engenheiro Fullstack líder: arquitetura de software, UI/UX, backend em FastAPI, segurança Firebase e pipelines de IA.',
+    stack: ['Angular', 'TypeScript', 'Python / FastAPI', 'Firebase Auth', 'Gemini API'],
+    impact: 'Plataforma robusta em produção, com alta fidelidade de UI, autenticação MFA/TOTP e inteligência preditiva.',
     githubUrl: 'https://github.com/mat-dgruber/CCAT-monFinTrack',
     architectureDetails: [
-      'Frontend em Angular com dashboard interativo, gráficos, dark mode e experiência responsiva.',
-      'Backend FastAPI com Pydantic, Firebase, autenticação, MFA/TOTP e isolamento de dados por usuário.',
-      'Integrações com Google Gemini, OCR, relatórios, recorrências, assinaturas e exportações financeiras.',
+      'Frontend Angular com arquitetura modular, RxJS reativo, gráficos interativos e dark mode nativo.',
+      'Backend assíncrono em FastAPI com schemas Pydantic, autenticação multifator e isolamento por tenant.',
+      'Pipeline de IA com Google Gemini para classificação de despesas e geração de relatórios de saúde financeira.',
     ],
   },
   {
     id: 'meucpb',
+    number: '04',
     title: 'meuCPB',
-    subtitle: 'Portal corporativo fullstack com Angular, FastAPI e BFF',
-    context: 'Aplicação corporativa para colaboradores da CPB, com SPA em Angular e backend BFF para orquestrar regras e integrações internas.',
-    problem: 'Sistemas internos precisam centralizar fluxos, dados e integrações legadas sem comprometer usabilidade, segurança e manutenção.',
-    role: 'Responsável pela arquitetura de desenvolvimento de ponta a ponta: front-end, backend, UI/UX, integrações e publicação.',
-    stack: ['Angular', 'TypeScript', 'FastAPI', 'SQL Server', 'LDAP'],
-    impact: 'Modernização de experiência interna com arquitetura BFF, reatividade no front-end e integração com sistemas corporativos.',
+    subtitle: 'Portal Corporativo com Padrão BFF (Backend-for-Frontend) e Alta Integração',
+    context: 'Plataforma unificada para colaboradores e operações corporativas, orquestrando legados e novos microsserviços.',
+    problem: 'Sistemas internos dispersos causavam fricção operacional e gargalos de manutenção.',
+    role: 'Arquiteto de ponta a ponta: desenho da camada BFF, front-end reativo, integração com banco de dados corporativo e deploy.',
+    stack: ['Angular', 'TypeScript', 'FastAPI', 'SQL Server', 'LDAP / SSO'],
+    impact: 'Centralização de operações críticas em uma experiência fluida, reduzindo tempo de processamento interno.',
     githubUrl: 'https://github.com/mat-dgruber/meuCPB',
     architectureDetails: [
-      'SPA em Angular com TypeScript, RxJS e interface responsiva.',
-      'Backend FastAPI no padrão Backend-for-Frontend para regras corporativas.',
-      'Integrações com SQL Server, LDAP, Redis e APIs de parceiros.',
+      'Camada BFF em FastAPI desacoplando regras de negócio corporativas de integrações de infraestrutura.',
+      'Autenticação corporativa integrada com diretórios LDAP e segurança baseada em funções (RBAC).',
+      'Consistência de dados com SQL Server e barramento de cache em alta performance.',
     ],
   },
 ];
 
 export default function ProjectGrid() {
   return (
-    <section id="projects" className="relative z-10 px-6 py-24">
-      <div className="premium-shell space-y-10">
+    <section id="projects" className="relative z-10 px-4 sm:px-6 py-28 border-t border-slate-800/60">
+      <div className="premium-shell space-y-12">
         <div className="max-w-3xl space-y-4">
-          <h2 className="text-3xl font-semibold tracking-[-0.02em] text-white sm:text-5xl">
-            Cases que mostram execução, arquitetura e impacto.
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-emerald-400 uppercase tracking-wider">
+            <FolderGit2 className="h-3.5 w-3.5" />
+            <span>ARQUITETURA & CASES SELECIONADOS</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+            Engenharia em produção, arquitetura limpa e impacto mensurável.
           </h2>
-          <p className="text-lg leading-8 text-slate-300">
-            Projetos selecionados pela clareza do problema, papel técnico exercido e evidência de entrega.
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            Sistemas desenhados para resolver problemas complexos — de linguagens de programação a plataformas completas com IA.
           </p>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-2">
           {CASE_STUDIES.map((project, index) => (
             <motion.article
               key={project.id}
-              initial={{ opacity: 0, y: 22, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              whileHover={{ y: -6 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.45, delay: index * 0.04 }}
-              className="premium-card flex flex-col p-6"
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              className="tech-card flex flex-col justify-between p-6 sm:p-8"
             >
-              <div className="space-y-3">
-                <p className="text-sm text-blue-300">{project.subtitle}</p>
-                <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
-                <p className="leading-7 text-slate-300">{project.context}</p>
-              </div>
-
-              <div className="mt-6 grid gap-4 text-sm sm:grid-cols-2">
-                <div>
-                  <p className="font-semibold text-slate-100">Problema</p>
-                  <p className="mt-1 leading-6 text-slate-400">{project.problem}</p>
+              <div>
+                <div className="flex items-center justify-between border-b border-slate-800/80 pb-4">
+                  <span className="font-mono text-xs font-bold text-emerald-400 tracking-wider">
+                    CASE // {project.number}
+                  </span>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Ver repositório do projeto ${project.title} no GitHub`}
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-white transition"
+                  >
+                    <Code2 className="h-3.5 w-3.5" />
+                    <span>REPOSITÓRIO</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 text-emerald-400" />
+                  </a>
                 </div>
-                <div>
-                  <p className="font-semibold text-slate-100">Meu papel</p>
-                  <p className="mt-1 leading-6 text-slate-400">{project.role}</p>
+
+                <div className="mt-5 space-y-2">
+                  <h3 className="text-2xl font-bold tracking-tight text-white">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs font-mono text-emerald-400/90 leading-relaxed">
+                    {project.subtitle}
+                  </p>
+                  <p className="pt-2 text-sm text-slate-300 leading-relaxed">
+                    {project.context}
+                  </p>
                 </div>
-              </div>
 
-              <div className="mt-6 rounded-2xl border border-blue-400/20 bg-blue-400/10 p-4 text-sm text-blue-100">
-                <strong className="text-blue-200">Resultado:</strong> {project.impact}
-              </div>
+                <div className="mt-6 grid gap-4 text-xs sm:grid-cols-2 border-t border-slate-800/60 pt-5">
+                  <div className="space-y-1">
+                    <span className="font-mono text-slate-400 uppercase tracking-wider block">
+                      Desafio Técnico
+                    </span>
+                    <p className="text-slate-300 leading-relaxed">
+                      {project.problem}
+                    </p>
+                  </div>
+                  <div className="space-y-1">
+                    <span className="font-mono text-slate-400 uppercase tracking-wider block">
+                      Responsabilidade
+                    </span>
+                    <p className="text-slate-300 leading-relaxed">
+                      {project.role}
+                    </p>
+                  </div>
+                </div>
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.stack.map((item) => (
-                    <motion.span
+                <div className="mt-6 rounded-md border border-emerald-500/20 bg-emerald-500/5 p-4">
+                  <span className="font-mono text-xs font-semibold text-emerald-400 uppercase tracking-wider block">
+                    Impacto & Entrega:
+                  </span>
+                  <p className="mt-1 text-xs sm:text-sm text-slate-200 leading-relaxed">
+                    {project.impact}
+                  </p>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.stack.map((item) => (
+                    <span
                       key={item}
-                      whileHover={{ y: -2, borderColor: 'rgba(96, 165, 250, 0.42)', color: '#dbeafe' }}
-                      className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300"
+                      className="tech-tag rounded border border-slate-700/60 bg-slate-900/80 px-2.5 py-1 text-slate-300"
                     >
                       {item}
-                    </motion.span>
-                ))}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              <details className="mt-6 border-t border-slate-800 pt-5">
-                <summary className="cursor-pointer text-sm font-semibold text-slate-200">Ver decisões técnicas</summary>
-                <ul className="mt-4 space-y-2">
+              <details className="mt-6 border-t border-slate-800/80 pt-4 group">
+                <summary className="cursor-pointer text-xs font-mono text-slate-400 group-hover:text-emerald-400 flex items-center justify-between py-1">
+                  <span>DECISÕES DE ARQUITETURA</span>
+                  <span className="text-emerald-400">+</span>
+                </summary>
+                <ul className="mt-3 space-y-2 border-l-2 border-emerald-500/30 pl-4 py-1">
                   {project.architectureDetails.map((detail) => (
-                    <li key={detail} className="flex gap-2 text-sm leading-6 text-slate-400">
-                      <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-blue-300" />
+                    <li key={detail} className="flex gap-2 text-xs leading-relaxed text-slate-300">
+                      <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-emerald-400 mt-0.5" />
                       <span>{detail}</span>
                     </li>
                   ))}
                 </ul>
               </details>
-
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-300 hover:text-blue-200"
-              >
-                Ver repositório <ArrowUpRight className="h-4 w-4" />
-              </a>
             </motion.article>
           ))}
         </div>
