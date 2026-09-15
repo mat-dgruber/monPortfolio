@@ -1,0 +1,14 @@
+# Matheus Gruber — Fullstack Software Engineer & UI/UX
+
+> Portfólio oficial de Matheus Gruber, Engenheiro de Software Fullstack especialista em Angular, React, TypeScript, Python, arquitetura de sistemas enterprise, UI/UX e Inteligência Artificial Aplicada (LLMs, RAG e MCP).
+
+## Recursos Principais
+- [Cases de Sucesso](https://monportfolio.vercel.app/#projects): Projetos autorais e corporativos com detalhes de problema, arquitetura e impacto (OpenClaude, Harpia, monFinTrack, meuCPB).
+- [Prova Técnica & Eixos de Entrega](https://monportfolio.vercel.app/#technical-proof): Demonstração de competências divididas em Front-end/UX, Backend/Confiabilidade, Arquitetura/Integrações e IA Aplicada.
+- [Trajetória Profissional](https://monportfolio.vercel.app/#trajectory): Linha do tempo profissional (Casa Publicadora Brasileira - CPB), graduação e pós-graduação em Engenharia de IA Aplicada.
+- [Laboratório Técnico](https://monportfolio.vercel.app/lab): Playground da linguagem Harpia, terminal OpenClaude e status dos sistemas.
+- [Contato Direto](https://monportfolio.vercel.app/#contact): Formulário de contato direto e canal oficial via WhatsApp.
+
+## Opcional
+- [Ficha Técnica Completa & Arquitetura](https://monportfolio.vercel.app/llms-full.txt): Especificações detalhadas de todos os projetos, tecnologias, padrões arquiteturais (Clean Architecture, DDD, BFF) e repositórios no GitHub.
+- [GitHub](https://github.com/mat-dgruber): Perfil oficial com projetos open-source e contribuições.

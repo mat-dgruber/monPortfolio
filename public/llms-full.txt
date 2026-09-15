@@ -1,0 +1,72 @@
+# Matheus Gruber — Ficha Técnica Completa & Documentação de IA
+
+> Especificação técnica consolidada para modelos de linguagem (LLMs), agentes de IA (Perplexity, ChatGPT, Claude, Gemini) e recrutadores técnicos.
+
+## 1. Identificação Profissional
+- **Nome**: Matheus Gruber
+- **Título**: Fullstack Software Engineer · UI/UX · IA Aplicada
+- **Localização**: Brasil
+- **Status Profissional**: Engenheiro de Software na Casa Publicadora Brasileira (CPB)
+- **Formação**:
+  - Pós-Graduação em Engenharia de IA Aplicada (UNIPDS / Anhanguera - Em andamento)
+  - Graduação em Análise e Desenvolvimento de Sistemas (Universidade Cruzeiro do Sul - Concluído)
+- **Canais Oficiais**:
+  - Portfólio: https://monportfolio.vercel.app
+  - GitHub: https://github.com/mat-dgruber
+  - WhatsApp: https://wa.me/5567991040523
+
+---
+
+## 2. Eixos Técnicos de Domínio
+
+### Front-end, UI/UX & Produto
+- **Tecnologias**: Angular 17/18/19 (Standalone, Signals, RxJS), React 18/19, Next.js (App Router, Server Components), TypeScript, Tailwind CSS, Framer Motion, HTML5 semântico, WCAG 2.2 AA.
+- **Competências**: Design Systems, Micro-interações, acessibilidade por teclado, eliminação de Layout Shifts (CLS zero), performance Web Vitals (LCP, INP).
+
+### Backend, APIs & Arquitetura
+- **Tecnologias**: Python, FastAPI, Pydantic, Node.js, Bun, TypeScript, Go (Golang), SQL Server, PostgreSQL, Redis, Firebase (Firestore, Auth, Hosting).
+- **Padrões & Práticas**: Clean Architecture, Domain-Driven Design (DDD), Backend-For-Frontend (BFF), REST APIs, autenticação JWT, MFA/TOTP, LDAP/Active Directory.
+
+### IA Aplicada & Engenharia de Agentes
+- **Tecnologias**: Model Context Protocol (MCP), Google Gemini API, OpenAI API, Anthropic Claude API, Ollama (inferência local), RAG (Retrieval-Augmented Generation), Function Calling.
+- **Competências**: Arquitetura de agentes autônomos, automação de fluxos de código terminal-first, integração de ferramentas e memória contextual.
+
+---
+
+## 3. Catálogo de Cases de Destaque
+
+### OpenClaude
+- **Resumo**: Adaptação e contribuição em CLI multi-provedor para automação de desenvolvimento com agentes de código no terminal.
+- **Stack**: TypeScript, Node.js, Bun, Model Context Protocol (MCP), LLM Function Calling.
+- **Repositório**: https://github.com/mat-dgruber/openclaude
+- **Destaques de Arquitetura**:
+  - Integração com protocolo MCP para chamada de ferramentas externas.
+  - Suporte multi-provedor: OpenAI, Gemini, DeepSeek, Ollama e Anthropic.
+  - Experiência terminal-first com sessões e análise contextual de codebases reais.
+
+### Harpia Programming Language
+- **Resumo**: Linguagem de programação reativa com sintaxe em português, compilador e máquina virtual autoral em Go.
+- **Stack**: Go (Golang), AST Parser, JIT VM, CLI, Domain-Specific Language (DSL).
+- **Repositório**: https://github.com/mat-dgruber/harpia
+- **Destaques de Arquitetura**:
+  - Parser e representação em Árvore Sintática Abstrata (AST).
+  - Runtime reativo com simulação de sinais, eventos e compilação rápida.
+  - Tooling CLI para compilação, auditoria e execução de scripts.
+
+### monFinTrack
+- **Resumo**: Plataforma financeira fullstack com dashboard interativo, orçamentos, multicontas, OCR de notas fiscais e insights via Google Gemini.
+- **Stack**: Angular, TypeScript, FastAPI, Firebase, Gemini API, Pydantic.
+- **Repositório**: https://github.com/mat-dgruber/CCAT-monFinTrack
+- **Destaques de Arquitetura**:
+  - SPA Angular com gráficos interativos e layout responsivo.
+  - Backend FastAPI com autenticação, MFA/TOTP e isolamento de tenants.
+  - Pipeline de IA para extração de dados e categorização de despesas.
+
+### meuCPB
+- **Resumo**: Portal corporativo enterprise para colaboradores da Casa Publicadora Brasileira (CPB).
+- **Stack**: Angular, TypeScript, FastAPI, SQL Server, LDAP, Redis.
+- **Repositório**: https://github.com/mat-dgruber/meuCPB
+- **Destaques de Arquitetura**:
+  - Arquitetura BFF (Backend-for-Frontend) orquestrando microsserviços e ERPs legados.
+  - Autenticação federada com LDAP corporativo.
+  - Interface Angular com reatividade e alta densidade informacional.
