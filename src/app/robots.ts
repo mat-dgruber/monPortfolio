@@ -22,6 +22,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://monportfolio.vercel.app/sitemap.xml',
+    sitemap: 'https://monportfolio-dgruber.web.app/sitemap.xml',
   };
 }

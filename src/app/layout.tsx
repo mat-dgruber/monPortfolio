@@ -17,7 +17,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://monportfolio.vercel.app'),
+  metadataBase: new URL('https://monportfolio-dgruber.web.app'),
   title: 'Matheus Gruber · Fullstack Engineer & AI Solutions Architect',
   description:
     'Portfólio profissional de Matheus Gruber: engenharia fullstack, arquitetura de sistemas escaláveis, interfaces de alta precisão e soluções com IA aplicada.',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: 'Matheus Gruber · Fullstack Engineer & AI Solutions Architect',
     description:
       'Engenharia fullstack, arquitetura de sistemas e soluções com IA aplicada para produtos técnicos confiáveis.',
-    url: 'https://monportfolio.vercel.app',
+    url: 'https://monportfolio-dgruber.web.app',
     siteName: 'Matheus Gruber Portfolio',
     images: [
       {
@@ -80,11 +80,11 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Person',
-      '@id': 'https://monportfolio.vercel.app/#person',
+      '@id': 'https://monportfolio-dgruber.web.app/#person',
       name: 'Matheus Gruber',
       jobTitle: 'Engenheiro de Software Fullstack & Especialista em IA Aplicada',
-      url: 'https://monportfolio.vercel.app',
-      image: 'https://monportfolio.vercel.app/images/IMG_2250.jpg',
+      url: 'https://monportfolio-dgruber.web.app',
+      image: 'https://monportfolio-dgruber.web.app/images/IMG_2250.jpg',
       sameAs: [
         'https://github.com/mat-dgruber',
         'https://wa.me/5567991040523',
@@ -110,22 +110,22 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://monportfolio.vercel.app/#website',
-      url: 'https://monportfolio.vercel.app',
+      '@id': 'https://monportfolio-dgruber.web.app/#website',
+      url: 'https://monportfolio-dgruber.web.app',
       name: 'Matheus Gruber — Portfólio Profissional',
       description:
         'Engenharia fullstack, arquitetura de sistemas e soluções com IA aplicada.',
       publisher: {
-        '@id': 'https://monportfolio.vercel.app/#person',
+        '@id': 'https://monportfolio-dgruber.web.app/#person',
       },
     },
     {
       '@type': 'ProfilePage',
-      '@id': 'https://monportfolio.vercel.app/#profilepage',
-      url: 'https://monportfolio.vercel.app',
+      '@id': 'https://monportfolio-dgruber.web.app/#profilepage',
+      url: 'https://monportfolio-dgruber.web.app',
       name: 'Matheus Gruber — Perfil Profissional',
       mainEntity: {
-        '@id': 'https://monportfolio.vercel.app/#person',
+        '@id': 'https://monportfolio-dgruber.web.app/#person',
       },
     },
   ],
