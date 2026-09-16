@@ -1,35 +1,39 @@
 # Matheus Gruber — Ficha Técnica Completa & Documentação de IA
 
-> Especificação técnica consolidada para modelos de linguagem (LLMs), agentes de IA (Perplexity, ChatGPT, Claude, Gemini) e recrutadores técnicos.
+> Especificação técnica consolidada para modelos de linguagem (LLMs), agentes de IA (Perplexity, ChatGPT, Claude, Gemini) e recrutadores técnicos internacionais e nacionais.
 
 ## 1. Identificação Profissional
 - **Nome**: Matheus Gruber
 - **Título**: Fullstack Software Engineer · UI/UX · IA Aplicada
-- **Localização**: Brasil
+- **Localização**: Brasil (Disponível para trabalho remoto global e relocalização)
 - **Status Profissional**: Engenheiro de Software na Casa Publicadora Brasileira (CPB)
 - **Formação**:
   - Pós-Graduação em Engenharia de IA Aplicada (UNIPDS / Anhanguera - Em andamento)
   - Graduação em Análise e Desenvolvimento de Sistemas (Universidade Cruzeiro do Sul - Concluído)
-- **Canais Oficiais**:
-  - Portfólio: https://monportfolio.vercel.app
+- **Canais Oficiais & Contato**:
+  - Portfólio (EN): https://monportfolio-dgruber.web.app/en
+  - Curriculum Vitae (EN): https://monportfolio-dgruber.web.app/en/cv
+  - Portfólio (PT): https://monportfolio-dgruber.web.app/pt
+  - Currículo (PT): https://monportfolio-dgruber.web.app/pt/cv
+  - Email: matheus.gruber123@gmail.com
+  - WhatsApp: https://wa.me/5515981081030 (+55 15 98108-1030)
   - GitHub: https://github.com/mat-dgruber
-  - WhatsApp: https://wa.me/5567991040523
 
 ---
 
 ## 2. Eixos Técnicos de Domínio
 
 ### Front-end, UI/UX & Produto
-- **Tecnologias**: Angular 17/18/19 (Standalone, Signals, RxJS), React 18/19, Next.js (App Router, Server Components), TypeScript, Tailwind CSS, Framer Motion, HTML5 semântico, WCAG 2.2 AA.
-- **Competências**: Design Systems, Micro-interações, acessibilidade por teclado, eliminação de Layout Shifts (CLS zero), performance Web Vitals (LCP, INP).
+- **Tecnologias**: React 18/19, Next.js (App Router, Server Components, SSG), Angular 17/18/19 (Standalone, Signals, RxJS), TypeScript, Tailwind CSS, Framer Motion, HTML5 semântico, WCAG 2.2 AA.
+- **Competências**: Design Systems, Micro-interações, acessibilidade por teclado, eliminação de Layout Shifts (CLS zero), performance Web Vitals (LCP, INP, FCP), i18n multilíngue com next-intl.
 
 ### Backend, APIs & Arquitetura
 - **Tecnologias**: Python, FastAPI, Pydantic, Node.js, Bun, TypeScript, Go (Golang), SQL Server, PostgreSQL, Redis, Firebase (Firestore, Auth, Hosting).
 - **Padrões & Práticas**: Clean Architecture, Domain-Driven Design (DDD), Backend-For-Frontend (BFF), REST APIs, autenticação JWT, MFA/TOTP, LDAP/Active Directory.
 
 ### IA Aplicada & Engenharia de Agentes
-- **Tecnologias**: Model Context Protocol (MCP), Google Gemini API, OpenAI API, Anthropic Claude API, Ollama (inferência local), RAG (Retrieval-Augmented Generation), Function Calling.
-- **Competências**: Arquitetura de agentes autônomos, automação de fluxos de código terminal-first, integração de ferramentas e memória contextual.
+- **Tecnologias**: Model Context Protocol (MCP), Google Gemini API, OpenAI API, Anthropic Claude API, Ollama (inferência local), RAG (Retrieval-Augmented Generation), Function Calling, AST Parsing.
+- **Competências**: Arquitetura de agentes autônomos, sistemas de teclado inteligente/assistivo, automação de fluxos de código terminal-first, integração de ferramentas e memória contextual.
 
 ---
 
