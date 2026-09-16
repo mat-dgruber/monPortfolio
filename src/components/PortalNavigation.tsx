@@ -111,7 +111,7 @@ export default function PortalNavigation() {
             <button
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center text-[#EDE7DC] hover:text-[#3FA2AD] transition-colors focus:outline-none"
+              className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-[#EDE7DC] hover:text-[#3FA2AD] transition-colors focus:outline-none focus:ring-1 focus:ring-[#3FA2AD] rounded-full"
               aria-label={t('ariaToggle')}
               aria-expanded={mobileOpen}
             >
@@ -127,13 +127,13 @@ export default function PortalNavigation() {
 
       {/* Mobile Drawer Floating Card */}
       {mobileOpen && (
-        <div className="mt-2 md:hidden rounded-2xl border border-[rgba(237,231,220,0.18)] bg-[#0A0C0E]/95 backdrop-blur-2xl px-6 py-5 flex flex-col gap-3.5 shadow-2xl">
+        <div className="mt-2 md:hidden rounded-2xl border border-[rgba(237,231,220,0.18)] bg-[#0A0C0E]/95 backdrop-blur-2xl px-6 py-5 flex flex-col gap-3 shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="font-body text-[11px] font-semibold uppercase tracking-[0.15em] text-[#9EA5A8] hover:text-[#3FA2AD] transition-colors py-1"
+              className="font-body text-[11.5px] font-semibold uppercase tracking-[0.15em] text-[#9EA5A8] hover:text-[#3FA2AD] transition-colors py-2 min-h-[44px] flex items-center"
             >
               {link.label}
             </Link>
@@ -141,7 +141,7 @@ export default function PortalNavigation() {
           <Link
             href={`/${currentLocale}/cv`}
             onClick={() => setMobileOpen(false)}
-            className="font-body text-[11px] font-semibold uppercase tracking-[0.15em] text-[#3FA2AD] hover:underline py-1 flex items-center gap-1.5"
+            className="font-body text-[11.5px] font-semibold uppercase tracking-[0.15em] text-[#3FA2AD] hover:underline py-2 min-h-[44px] flex items-center gap-2 border-t border-[rgba(237,231,220,0.08)] pt-3"
           >
             <span>📄 {t('cv')}</span>
           </Link>
@@ -150,9 +150,9 @@ export default function PortalNavigation() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            className="mt-1 text-center py-2.5 rounded-full bg-[#EDE7DC] text-[#0A0C0E] text-[11px] font-bold uppercase tracking-[0.12em]"
+            className="font-body inline-flex items-center justify-center px-4 py-3 rounded-full bg-[#EDE7DC] text-[#0A0C0E] text-[11px] font-bold uppercase tracking-[0.12em] hover:bg-white transition-colors shadow-sm whitespace-nowrap min-h-[44px] mt-1"
           >
-            {t('whatsappDrawer')}
+            {t('whatsappCta')}
           </a>
         </div>
       )}

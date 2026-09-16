@@ -16,37 +16,37 @@ const RELEASE_CONFIGS: ReleaseConfig[] = [
   {
     id: 'openclaude',
     githubUrl: 'https://github.com/mat-dgruber/openclaude',
-    image: '/images/openclaude_banner_1785639308843.png',
+    image: '/images/openclaude_banner_1785639308843.webp',
   },
   {
     id: 'harpia',
     githubUrl: 'https://github.com/mat-dgruber/harpia',
-    image: '/images/harpia_banner_1785639324586.png',
+    image: '/images/harpia_banner_1785639324586.webp',
   },
   {
     id: 'cpb-despesas',
     githubUrl: 'https://github.com/mat-dgruber',
-    image: '/images/fintech_banner_1785639390086.png',
+    image: '/images/fintech_banner_1785639390086.webp',
   },
   {
     id: 'meucpb',
     githubUrl: 'https://github.com/mat-dgruber/meuCPB',
-    image: '/images/lamed_banner_1785639364938.png',
+    image: '/images/lamed_banner_1785639364938.webp',
   },
   {
     id: 'monfintrack',
     githubUrl: 'https://github.com/mat-dgruber/CCAT-monFinTrack',
-    image: '/images/fintech_banner_1785639390086.png',
+    image: '/images/fintech_banner_1785639390086.webp',
   },
   {
     id: 'lamed',
     githubUrl: 'https://github.com/mat-dgruber/lamed',
-    image: '/images/lamed_banner_1785639364938.png',
+    image: '/images/lamed_banner_1785639364938.webp',
   },
   {
     id: 'landing-pages',
     githubUrl: 'https://mariaizabela.com.br',
-    image: '/images/openclaude_banner_1785639308843.png',
+    image: '/images/openclaude_banner_1785639308843.webp',
   },
 ];
 
@@ -210,7 +210,7 @@ export default function ReleasesDeck() {
             role="region"
             aria-roledescription="Pilha interativa de projetos"
             onKeyDown={handleKeyDown}
-            className="relative w-[300px] h-[310px] sm:w-[380px] sm:h-[390px] md:w-[420px] md:h-[430px] select-none focus:outline-none focus:ring-1 focus:ring-[#3FA2AD]"
+            className="relative w-[min(300px,calc(100vw-40px))] h-[310px] sm:w-[380px] sm:h-[390px] md:w-[420px] md:h-[430px] select-none focus:outline-none focus:ring-1 focus:ring-[#3FA2AD]"
             style={{ touchAction: 'pan-y' }}
             aria-label="Pilha interativa de projetos. Pressione as setas esquerda ou direita para descartar e alternar."
           >

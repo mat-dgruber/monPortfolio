@@ -52,14 +52,14 @@ export default function PortalHero() {
       aria-label="Portal de Entrada do Portfólio"
     >
       {/* Sticky Full-Height Stage */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden isolate">
+      <div className="sticky top-0 h-screen min-h-[100dvh] w-full overflow-hidden isolate">
         {/* Layer 1: Full-Bleed Image (Backmost) */}
         <motion.div
           style={{ scale: shouldReduceMotion ? 1 : imageScale }}
           className="absolute inset-0 w-full h-full will-change-transform"
         >
           <Image
-            src="/images/IMG_2250.jpg"
+            src="/images/IMG_2250.webp"
             alt={t('imageAlt')}
             fill
             priority
