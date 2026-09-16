@@ -115,14 +115,14 @@ export default function PortalHero() {
           </div>
         )}
 
-        {/* Layer 6: Wordmark on Top (Signature Move - Adjusted Size to Prevent Viewport Overflow) */}
+        {/* Layer 6: Wordmark on Top (Mobile Stacked + Desktop Inline with Split-Outward Motion) */}
         <div className="absolute inset-0 z-40 flex items-center justify-center pointer-events-none px-4 sm:px-8">
           <motion.h1
             style={{
               scale: shouldReduceMotion ? 1 : titleScale,
               letterSpacing: shouldReduceMotion ? '-0.02em' : titleLetterSpacing,
             }}
-            className="font-display font-extrabold text-[clamp(26px,5.8vw,82px)] text-[#EDE7DC] uppercase whitespace-nowrap leading-none select-none flex items-center will-change-transform"
+            className="font-display font-extrabold text-[clamp(38px,11.5vw,52px)] sm:text-[clamp(36px,5.8vw,82px)] text-[#EDE7DC] uppercase leading-[0.92] sm:leading-none select-none flex flex-col sm:flex-row items-center justify-center will-change-transform text-center"
           >
             <motion.span
               style={{ x: shouldReduceMotion ? '0%' : spanLeftX }}
@@ -130,7 +130,7 @@ export default function PortalHero() {
             >
               MATHEUS
             </motion.span>
-            <span className="w-[0.35em] inline-block" />
+            <span className="hidden sm:inline-block w-[0.35em]" />
             <motion.span
               style={{ x: shouldReduceMotion ? '0%' : spanRightX }}
               className="inline-block will-change-transform"
@@ -143,21 +143,23 @@ export default function PortalHero() {
         {/* Layer 7: Corner Metadata Pins */}
         <motion.div
           style={{ opacity: shouldReduceMotion ? 1 : metadataOpacity }}
-          className="absolute inset-0 z-40 pointer-events-none p-6 sm:p-10 flex flex-col justify-between"
+          className="absolute inset-0 z-40 pointer-events-none p-5 sm:p-10 flex flex-col justify-between"
         >
           {/* Top Row (Below floating navbar) */}
-          <div className="pt-16 sm:pt-14 flex items-center justify-between font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9EA5A8]">
-            <div className="flex items-center gap-2">
+          <div className="pt-20 sm:pt-14 flex items-center justify-between font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9EA5A8] gap-2">
+            <div className="flex items-center gap-2 shrink-0">
               <span className="w-1.5 h-1.5 rounded-full bg-[#3FA2AD]" />
-              <span>MATHEUS GRUBER</span>
+              <span className="hidden sm:inline">MATHEUS GRUBER</span>
+              <span className="sm:hidden text-[9.5px]">M. GRUBER</span>
             </div>
-            <div className="flex items-center gap-2.5 px-3 py-1 rounded-full border border-[rgba(63,162,173,0.3)] bg-[#101317]/80 backdrop-blur-md">
+            <div className="flex items-center gap-2 px-2.5 sm:px-3 py-1 rounded-full border border-[rgba(63,162,173,0.3)] bg-[#101317]/85 backdrop-blur-md shrink-0">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#3FA2AD] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3FA2AD]" />
               </span>
-              <span className="text-[#EDE7DC] text-[9.5px] sm:text-[10.5px] font-medium tracking-[0.12em]">
-                {t('availableBadge')}
+              <span className="text-[#EDE7DC] text-[9px] sm:text-[10.5px] font-medium tracking-[0.12em] whitespace-nowrap">
+                <span className="sm:hidden">{t('availableBadgeShort')}</span>
+                <span className="hidden sm:inline">{t('availableBadge')}</span>
               </span>
             </div>
           </div>
