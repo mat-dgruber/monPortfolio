@@ -29,23 +29,23 @@ export default function PortalNavigation() {
   };
 
   return (
-    <header className="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[min(94%,980px)] transition-all">
-      <div className="rounded-full border border-[rgba(237,231,220,0.18)] bg-[#0A0C0E]/90 backdrop-blur-xl px-3.5 sm:px-6 py-2 flex items-center justify-between shadow-2xl shadow-black/80 gap-3 sm:gap-4">
+    <header className="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[min(96%,1140px)] transition-all">
+      <div className="rounded-full border border-[rgba(237,231,220,0.18)] bg-[#0A0C0E]/90 backdrop-blur-xl px-4 sm:px-5 lg:px-6 py-2 flex items-center justify-between shadow-2xl shadow-black/80 gap-2 sm:gap-4">
         {/* Display Wordmark */}
         <Link
           href="#portal"
-          className="font-display font-bold text-[13px] sm:text-[15px] tracking-[-0.02em] text-[#EDE7DC] hover:opacity-90 transition-opacity whitespace-nowrap shrink-0 pl-1"
+          className="font-display font-bold text-[13px] sm:text-[15px] tracking-[-0.02em] text-[#EDE7DC] hover:opacity-90 transition-opacity whitespace-nowrap shrink-0 pl-0.5 sm:pl-1"
         >
           MATHEUS GRUBER<span className="text-[#3FA2AD]">.</span>
         </Link>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-6 shrink-0" aria-label={t('ariaNav')}>
+        {/* Desktop Nav Links (Visible on Large Screens) */}
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0" aria-label={t('ariaNav')}>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-body text-[10px] sm:text-[10.5px] font-semibold uppercase tracking-[0.14em] text-[#9EA5A8] hover:text-[#3FA2AD] transition-colors whitespace-nowrap"
+              className="font-body text-[10px] xl:text-[10.5px] font-semibold uppercase tracking-[0.14em] text-[#9EA5A8] hover:text-[#3FA2AD] transition-colors whitespace-nowrap"
             >
               {link.label}
             </Link>
@@ -53,7 +53,7 @@ export default function PortalNavigation() {
         </nav>
 
         {/* Right Section: Language Switcher + CV + CTA + Mobile Toggle */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-2.5 xl:gap-3 shrink-0">
           {/* Language Switcher Pill */}
           <div
             className="flex items-center rounded-full border border-[rgba(237,231,220,0.15)] bg-[#101317]/80 p-0.5"
@@ -89,7 +89,7 @@ export default function PortalNavigation() {
           {/* CV / Resume Link Button (Desktop & Tablet) */}
           <Link
             href={`/${currentLocale}/cv`}
-            className="hidden sm:inline-flex font-body items-center justify-center px-3.5 py-1.5 rounded-full border border-[rgba(237,231,220,0.22)] text-[#EDE7DC] hover:border-[#3FA2AD] hover:text-[#3FA2AD] text-[10px] sm:text-[10.5px] font-semibold uppercase tracking-[0.12em] transition-colors shrink-0"
+            className="hidden sm:inline-flex font-body items-center justify-center px-3 sm:px-3.5 py-1.5 rounded-full border border-[rgba(237,231,220,0.22)] text-[#EDE7DC] hover:border-[#3FA2AD] hover:text-[#3FA2AD] text-[10px] sm:text-[10.5px] font-semibold uppercase tracking-[0.12em] transition-colors shrink-0"
           >
             {t('cv')}
           </Link>
@@ -100,7 +100,7 @@ export default function PortalNavigation() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#EDE7DC] text-[#0A0C0E] text-[10.5px] font-bold uppercase tracking-[0.12em] hover:bg-white transition-colors shadow-sm whitespace-nowrap leading-none shrink-0"
+              className="font-body inline-flex items-center justify-center px-3.5 xl:px-4 py-1.5 xl:py-2 rounded-full bg-[#EDE7DC] text-[#0A0C0E] text-[10px] xl:text-[10.5px] font-bold uppercase tracking-[0.12em] hover:bg-white transition-colors shadow-sm whitespace-nowrap leading-none shrink-0"
             >
               {t('whatsappCta')}
             </a>
@@ -110,7 +110,7 @@ export default function PortalNavigation() {
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden flex items-center justify-center w-8 h-8 rounded-full bg-[#101317] border border-[rgba(237,231,220,0.18)] text-[#EDE7DC] hover:text-[#3FA2AD] hover:border-[#3FA2AD] transition-all focus:outline-none"
+            className="lg:hidden flex items-center justify-center w-8 h-8 rounded-full bg-[#101317] border border-[rgba(237,231,220,0.18)] text-[#EDE7DC] hover:text-[#3FA2AD] hover:border-[#3FA2AD] transition-all focus:outline-none shrink-0"
             aria-label={t('ariaToggle')}
             aria-expanded={mobileOpen}
           >
@@ -137,7 +137,7 @@ export default function PortalNavigation() {
 
       {/* Mobile Drawer Floating Card */}
       {mobileOpen && (
-        <div className="mt-2.5 md:hidden rounded-2xl border border-[rgba(237,231,220,0.18)] bg-[#0A0C0E]/95 backdrop-blur-2xl p-5 flex flex-col gap-2.5 shadow-2xl shadow-black/90 animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="mt-2.5 lg:hidden rounded-2xl border border-[rgba(237,231,220,0.18)] bg-[#0A0C0E]/95 backdrop-blur-2xl p-5 flex flex-col gap-2.5 shadow-2xl shadow-black/90 animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col divide-y divide-[rgba(237,231,220,0.08)]">
             {navLinks.map((link) => (
               <Link
