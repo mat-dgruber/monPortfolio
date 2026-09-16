@@ -47,13 +47,14 @@ export default async function CvPage({
   return (
     <div className="min-h-screen bg-[#0A0C0E] text-[#EDE7DC] selection:bg-[#E8913C]/30 selection:text-[#EDE7DC] print:bg-white print:text-black font-sans py-8 sm:py-12 px-4 sm:px-6">
       {/* Interactive Floating Action Bar (Hidden on Print) */}
-      <div className="max-w-4xl mx-auto mb-8 flex items-center justify-between gap-4 print:hidden">
+      <div className="max-w-4xl mx-auto mb-8 flex items-center justify-between gap-2 sm:gap-4 print:hidden">
         <Link
           href={`/${locale}`}
-          className="font-body inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9EA5A8] hover:text-[#3FA2AD] transition-colors px-3 py-1.5 rounded-full border border-[rgba(237,231,220,0.15)] bg-[#101317]/80 backdrop-blur-md"
+          className="font-body inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9EA5A8] hover:text-[#3FA2AD] transition-colors px-2.5 sm:px-3.5 py-1.5 rounded-full border border-[rgba(237,231,220,0.15)] bg-[#101317]/80 backdrop-blur-md whitespace-nowrap shrink-0"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
-          <span>{t('backLink')}</span>
+          <ArrowLeft className="w-3.5 h-3.5 shrink-0" />
+          <span className="sm:hidden">{locale === 'pt' ? 'PORTFÓLIO' : 'PORTFOLIO'}</span>
+          <span className="hidden sm:inline">{t('backLink')}</span>
         </Link>
 
         {/* Client-side Controls (Print & Language Switcher) */}
