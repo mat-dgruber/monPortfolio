@@ -2,10 +2,12 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export default function StatementFold() {
   const containerRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations('statement');
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -30,46 +32,48 @@ export default function StatementFold() {
           <div className="flex items-center gap-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#3FA2AD]" />
             <span className="font-body text-[11px] font-semibold uppercase tracking-[0.15em] text-[#9EA5A8]">
-              [01 / POSICIONAMENTO & MANIFESTO]
+              {t('label')}
             </span>
           </div>
 
           {/* Statement Headline */}
           <h2 className="font-display font-semibold text-[clamp(26px,3.6vw,52px)] text-[#EDE7DC] leading-[1.14] tracking-[-0.025em] max-w-[22ch]">
-            Construo <span className="text-[#3FA2AD]">arquitetura resiliente</span>, produtos digitais de alta precisão e{' '}
-            <span className="text-[#E8913C]">sistemas com IA aplicada</span> de ponta a ponta.
+            {t('headlinePrefix')}
+            <span className="text-[#3FA2AD]">{t('resilientArch')}</span>
+            {t('headlineMiddle')}
+            <span className="text-[#E8913C]">{t('appliedAi')}</span>
+            {t('headlineSuffix')}
           </h2>
 
           {/* Secondary Editorial Paragraph */}
           <p className="font-body text-[15px] sm:text-[17px] text-[#9EA5A8] leading-relaxed max-w-[48ch]">
-            Aproximo a profundidade da computação de baixo nível (compiladores, runtimes e VM)
-            da fluidez de interfaces web modernas e pipelines de IA generativa em produção.
+            {t('paragraph')}
           </p>
 
           {/* Hairline Highlights */}
           <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-6 border-t border-[rgba(237,231,220,0.13)]">
             <div>
               <span className="block font-body text-[10.5px] uppercase tracking-[0.14em] text-[#6C7378]">
-                DIRETRIZ
+                {t('guidelineLabel')}
               </span>
               <span className="block font-display text-[15px] font-semibold text-[#EDE7DC] mt-1">
-                Zero Slop & Sem Clichês
+                {t('guidelineValue')}
               </span>
             </div>
             <div>
               <span className="block font-body text-[10.5px] uppercase tracking-[0.14em] text-[#6C7378]">
-                ENTREGA
+                {t('deliveryLabel')}
               </span>
               <span className="block font-display text-[15px] font-semibold text-[#EDE7DC] mt-1">
-                Arquitetura em Produção
+                {t('deliveryValue')}
               </span>
             </div>
             <div>
               <span className="block font-body text-[10.5px] uppercase tracking-[0.14em] text-[#6C7378]">
-                AGILIDADE
+                {t('agilityLabel')}
               </span>
               <span className="block font-display text-[15px] font-semibold text-[#EDE7DC] mt-1">
-                Protocolo MCP & Agentes
+                {t('agilityValue')}
               </span>
             </div>
           </div>

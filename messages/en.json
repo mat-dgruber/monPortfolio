@@ -1,0 +1,274 @@
+{
+  "meta": {
+    "title": "Matheus Gruber · Fullstack Engineer & AI Systems Architect",
+    "description": "Professional portfolio of Matheus Gruber: fullstack engineering, scalable system architecture, high-precision interfaces, and production-grade applied AI solutions.",
+    "ogDescription": "Fullstack engineering, resilient system architecture, and applied AI systems for mission-critical software products."
+  },
+  "navigation": {
+    "manifesto": "MANIFESTO",
+    "pillars": "PILLARS",
+    "cases": "CASES",
+    "roster": "EXPERTISE",
+    "dates": "TIMELINE",
+    "cv": "RESUME",
+    "whatsappCta": "Chat on WhatsApp",
+    "whatsappMobile": "WhatsApp",
+    "whatsappDrawer": "Talk on WhatsApp",
+    "ariaNav": "Main Navigation",
+    "ariaToggle": "Toggle navigation menu"
+  },
+  "hero": {
+    "imageAlt": "Matheus Gruber - Systems Architect & Applied AI Specialist",
+    "availableBadge": "AVAILABLE FOR NEW CHALLENGES & CONSULTING",
+    "location": "SÃO PAULO · BR · 2026",
+    "scrollHint": "SCROLL TO EXPLORE ↓"
+  },
+  "statement": {
+    "label": "[01 / POSITIONING & MANIFESTO]",
+    "headlinePrefix": "I engineer ",
+    "resilientArch": "resilient architecture",
+    "headlineMiddle": ", high-precision digital products, and ",
+    "appliedAi": "applied AI agentic systems",
+    "headlineSuffix": " end-to-end.",
+    "paragraph": "Bridging the depth of low-level systems computing (compilers, bytecode runtimes, and VMs) with the fluid responsiveness of modern web interfaces and production generative AI pipelines.",
+    "guidelineLabel": "PRINCIPLE",
+    "guidelineValue": "Zero Slop & Anti-Cliché",
+    "deliveryLabel": "DELIVERY",
+    "deliveryValue": "Production-Grade Architecture",
+    "agilityLabel": "AGILITY",
+    "agilityValue": "MCP Protocol & Autonomous Agents"
+  },
+  "bento": {
+    "label": "[01.5 / ARCHITECTURE & CORE PILLARS]",
+    "headline": "Deep systems computing, high availability, and applied AI in production.",
+    "paragraph": "Three unified engineering disciplines: from compiler design and virtual machine runtimes to resilient enterprise platforms and autonomous agent workflows.",
+    "axisTitle": "The Triple Engineering Axis",
+    "axisSubtitle": "Systemic Perspective",
+    "axisLowLevelTitle": "Low-Level Systems & Runtimes",
+    "axisLowLevelDesc": "Lexical parsing, AST generation, bytecode emission, and virtual machines. Complete mastery of computing fundamentals.",
+    "axisLowLevelCase": "CASE: LAMED VM",
+    "axisAppTitle": "Application Architecture",
+    "axisAppDesc": "Next.js, TypeScript, PostgreSQL, and Clean Architecture. Robust enterprise platforms built for scale.",
+    "axisAppCase": "CASE: CPB EXPENSES",
+    "axisAiTitle": "Applied AI & Agentic Workflows",
+    "axisAiDesc": "Model Context Protocol (MCP), dynamic LLM tool calling, agent orchestration, and local inference via Ollama.",
+    "axisAiCase": "CASE: OPENCLAUDE CLI",
+    "metricsTitle": "Production Metrics",
+    "metricsSubtitle": "Track Record",
+    "metricYearsValue": "03+",
+    "metricYearsLabel": "Years Engineering Software",
+    "metricReleasesValue": "07+",
+    "metricReleasesLabel": "Shipped Systems & Core Releases",
+    "metricQualityValue": "100%",
+    "metricQualityLabel": "Type-Safe & Zero Slop",
+    "metricMcpValue": "MCP",
+    "metricMcpLabel": "Open Protocol in Production",
+    "dualTitle": "Surgical Value Delivery",
+    "dualSubtitle": "How I collaborate depending on your team's strategic goals.",
+    "tabBusiness": "For Business & Founders",
+    "tabTech": "For Tech Leads & Teams",
+    "techPillar1Title": "01. RESILIENT ARCHITECTURE",
+    "techPillar1Desc": "Architecture decisions backed by documented ADRs, strict layer decoupling (Clean Arch), dependency injection, and deterministic production predictability.",
+    "techPillar2Title": "02. SUSTAINABLE CODE",
+    "techPillar2Desc": "Strict TypeScript with zero 'any', schema-validated API contracts (Zod), and deterministic test coverage across critical user paths.",
+    "techPillar3Title": "03. LOW-LEVEL INTUITION",
+    "techPillar3Desc": "Deep understanding of hardware layers, memory models, event loops, and compilation pipelines to eradicate bottlenecks hidden beneath frameworks.",
+    "bizPillar1Title": "01. RAPID HIGH-FIDELITY EXECUTION",
+    "bizPillar1Desc": "Fast delivery of functional products, enterprise portals, and high-converting web experiences that elevate brand positioning above competitors.",
+    "bizPillar2Title": "02. APPLIED AI THAT DRIVES REVENUE",
+    "bizPillar2Desc": "Integration of autonomous agents and LLM tool chains that deliver measurable operational leverage, cutting manual overhead and operational costs.",
+    "bizPillar3Title": "03. ZERO TECHNICAL DEBT",
+    "bizPillar3Desc": "Systems engineered to last: no costly rewrites 6 months post-launch because core foundations are built scalably from day one."
+  },
+  "releases": {
+    "label": "[02 / PRODUCTION CASES & SYSTEMS]",
+    "headline": "Proprietary systems and releases engineered for scale.",
+    "paragraph": "The interactive deck on the right functions as a tangible stack of engineering cards. Each project tackles critical challenges: from compiler design to agentic orchestration with MCP protocol and high-concurrency enterprise portals.",
+    "githubBtn": "View on GitHub",
+    "whatsappBtn": "Chat on WhatsApp",
+    "activeBadge": "ACTIVE IN DECK",
+    "archDetailsLabel": "ARCHITECTURAL BREAKDOWN",
+    "deckHint": "SWIPE CARD OR USE ARROWS ← / →",
+    "items": {
+      "openclaude": {
+        "code": "RELEASE 01 · 2025/2026",
+        "title": "OpenClaude CLI",
+        "subtitle": "Terminal-First AI Model Orchestrator & MCP Tool Harness",
+        "stack": "TypeScript · Node.js · Bun · MCP Protocol · OpenAI / Gemini / Claude",
+        "impact": "Unified command-line environment for agentic automation, bridging dynamic tool execution and multi-provider LLM pipelines with zero fragmentation.",
+        "details": "Deterministic context pruning, local & remote MCP tool invocation, and hybrid routing across local models (Ollama) and cloud APIs."
+      },
+      "harpia": {
+        "code": "RELEASE 02 · 2024/2025",
+        "title": "Harpia Language",
+        "subtitle": "Reactive Programming Language with Custom Go-based VM",
+        "stack": "Go · Lexical Analysis · AST Parser · JIT Virtual Machine · Bytecode CLI",
+        "impact": "Full proprietary compiler pipeline transforming human-readable syntax into abstract syntax trees and high-performance bytecode executed on a custom VM.",
+        "details": "Reactive signal propagation, static type inference, low-level memory scope isolation, and custom opcode bytecode instruction set."
+      },
+      "cpb-despesas": {
+        "code": "RELEASE 03 · 2025/2026",
+        "title": "CPB Expenses",
+        "subtitle": "Enterprise Expense Management & Approval System",
+        "stack": "Angular · TypeScript · Python / FastAPI · SQL Server · Multi-level Workflows",
+        "impact": "Enterprise platform streamlining individual corporate expense claims, automated receipt validation, real-time auditing, and hierarchical approval workflows.",
+        "details": "Reactive frontend with dynamic schema forms, tax invoice verification, strict cost center enforcement, cutting accounting review cycles by 70%."
+      },
+      "meucpb": {
+        "code": "RELEASE 04 · 2026",
+        "title": "meuCPB Portal",
+        "subtitle": "Enterprise Gateway with Backend-for-Frontend (BFF) Pattern",
+        "stack": "Angular · FastAPI · Python · SQL Server · Corporate LDAP / SSO",
+        "impact": "Centralizing mission-critical corporate workflows, eliminating friction between legacy internal services and modern high-availability applications.",
+        "details": "BFF orchestration layer decoupling corporate business rules, unified single sign-on (SSO), and granular role-based access control (RBAC)."
+      },
+      "monfintrack": {
+        "code": "RELEASE 05 · 2025",
+        "title": "monFinTrack",
+        "subtitle": "Fullstack Financial Intelligence Platform with Predictive AI",
+        "stack": "Angular · TypeScript · Python / FastAPI · Firebase Auth · Gemini API",
+        "impact": "Enterprise financial planning suite with asynchronous transaction processing, multi-factor authentication (MFA), and automated AI expense categorization.",
+        "details": "Modular Angular architecture, reactive FastAPI backend with strict Pydantic contract validation, and predictive forecasting for corporate runway."
+      },
+      "lamed": {
+        "code": "RELEASE 06 · 2024/2025",
+        "title": "Lamed Educational Platform",
+        "subtitle": "Education Engine with Offline-First Resilient Architecture",
+        "stack": "Python · FastAPI · PostgreSQL · Offline Sync · Reactive Frontend",
+        "impact": "Resilient educational platform ensuring uninterrupted learning in intermittent connectivity environments via automated background delta sync.",
+        "details": "Client-side indexed progress tracking and deterministic bi-directional conflict reconciliation, guaranteeing full data integrity."
+      },
+      "landing-pages": {
+        "code": "RELEASE 07 · 2025/2026",
+        "title": "High-Impact Landing Pages & Web Visuals",
+        "subtitle": "High-Converting Portals, Micro-Interactions & Performance UI",
+        "stack": "Next.js / Angular · Tailwind CSS · Framer Motion · Core Web Vitals · SEO/AEO",
+        "impact": "Architecting bespoke web experiences with uncompromising visual craftsmanship and conversion optimization, with production cases like mariaizabela.com.br.",
+        "details": "Conversion-rate-optimized (CRO) information architecture, 60fps GPU-accelerated micro-interactions, perfect Lighthouse CWV scores, and rich semantic indexing."
+      }
+    }
+  },
+  "roster": {
+    "label": "[03 / COMPETENCY MATRIX & CAREER TIMELINE]",
+    "skillsHeadline": "Core engineering capabilities.",
+    "skillsParagraph": "Technical mastery forged through three years of building end-to-end scalable production software.",
+    "timelineHeadline": "Professional & academic timeline.",
+    "timelineParagraph": "Chronological track record of corporate impact, shipped systems, and ongoing technical education.",
+    "appliedTechLabel": "APPLIED TECHNOLOGIES:",
+    "timelineTag": "TIMELINE",
+    "tablePeriod": "PERIOD",
+    "tableRole": "ROLE / ORGANIZATION",
+    "tableImpact": "KEY IMPACT & RESPONSIBILITIES",
+    "tableStack": "CORE TECH STACK",
+    "items": [
+      {
+        "tag": "EXPERTISE 01",
+        "name": "Fullstack Architecture & Microservices",
+        "metric": "03+ YEARS IN PRODUCTION",
+        "description": "End-to-end software architecture design: strict decoupling between frontend and backend via BFF (Backend-for-Frontend) patterns, strongly-typed API contracts, and modular services for high concurrency scale.",
+        "appliedTechs": "Next.js · Angular · Python / FastAPI · TypeScript · REST / gRPC"
+      },
+      {
+        "tag": "EXPERTISE 02",
+        "name": "High-Precision UI & Frontend Engineering",
+        "metric": "CORE WEB VITALS",
+        "description": "Crafting modern web interfaces with top-tier aesthetic fidelity: zero generic layouts, tactile 60fps micro-interactions, WCAG 2.2 accessibility, and deep optimization of Core Web Vitals (LCP, INP, CLS).",
+        "appliedTechs": "Tailwind CSS · Framer Motion · Component Architecture · Web Vitals"
+      },
+      {
+        "tag": "EXPERTISE 03",
+        "name": "Applied Artificial Intelligence & MCP Protocol",
+        "metric": "PRODUCTION AGENTS",
+        "description": "Implementing agentic systems that transcend basic chatbots: production RAG pipelines, dynamic tool orchestration via Model Context Protocol (MCP), and deterministic multi-model reasoning loops.",
+        "appliedTechs": "MCP Protocol · Gemini API · OpenAI · Ollama Local · RAG Pipelines"
+      },
+      {
+        "tag": "EXPERTISE 04",
+        "name": "Relational Data Engineering & SQL Performance",
+        "metric": "ENTERPRISE DATABASES",
+        "description": "Administration and tuning of mission-critical databases: relational schema modeling, strict ACID transaction isolation in enterprise workloads, and query rewriting to accelerate financial pipelines.",
+        "appliedTechs": "SQL Server · Index & Query Tuning · Relational Modeling · ACID Transactions"
+      },
+      {
+        "tag": "EXPERTISE 05",
+        "name": "Compilers, AST & Low-Level Runtimes",
+        "metric": "PROPRIETARY GO SYSTEMS",
+        "description": "Building and mastering systems programming foundations: custom tokenizers, lexical analyzers, AST parsers, bytecode instruction design, and virtual machines (VM) for reactive code execution.",
+        "appliedTechs": "Go · Lexical/Syntactic Parsing · AST · JIT VM · Bytecode Design"
+      }
+    ],
+    "timeline": [
+      {
+        "period": "2026 — PRESENT",
+        "role": "Fullstack Software Engineer",
+        "organization": "Casa Publicadora Brasileira (CPB)",
+        "summary": "Direct leadership in enterprise legacy modernization. Architecting FastAPI + Angular BFF layers, microservice architectures, and resilient integration with corporate LDAP / SSO systems.",
+        "skills": ["Angular", "TypeScript", "Python", "FastAPI", "Clean Architecture", "BFF"]
+      },
+      {
+        "period": "2025 — IN PROGRESS",
+        "role": "Postgraduate in Applied AI Engineering",
+        "organization": "UNIPDS / Faculdade Anhanguera",
+        "summary": "Advanced specialization in intelligent system architectures: context engineering, autonomous agent orchestration with code execution, MCP task automation, and RAG architectures.",
+        "skills": ["Model Context Protocol (MCP)", "LLMs", "RAG Pipelines", "Autonomous Agents"]
+      },
+      {
+        "period": "2024 — 2026",
+        "role": "Junior Systems Analyst",
+        "organization": "Casa Publicadora Brasileira (CPB)",
+        "summary": "Maintenance and optimization of enterprise ERP systems and POS (Point-of-Sale) environments. Diagnosing and tuning high-throughput SQL Server transactions for distributed branch operations.",
+        "skills": ["SQL Server", "Enterprise ERPs", "Transactional Tuning", "Automation"]
+      },
+      {
+        "period": "2023 — 2024",
+        "role": "B.S. in Systems Analysis and Development",
+        "organization": "Universidade Cruzeiro do Sul",
+        "summary": "Rigorous undergraduate program covering software engineering, algorithmic complexity, low-level data structures, computer architecture, and modern web application systems.",
+        "skills": ["Data Structures", "Algorithms", "Software Engineering", "OOP"]
+      },
+      {
+        "period": "2023 — 2024",
+        "role": "IT Assistant & Intern",
+        "organization": "Casa Publicadora Brasileira (CPB)",
+        "summary": "Infrastructure administration, enterprise Linux/Windows servers, networking, and structured technical transition into the internal software engineering team.",
+        "skills": ["Infrastructure", "Enterprise Networks", "Linux/Windows Servers"]
+      }
+    ]
+  },
+  "close": {
+    "label": "[04 / CLOSING & DIALOGUE]",
+    "headline": "Ready to build the next breakthrough system?",
+    "paragraph": "Available for strategic fullstack software engineering roles, resilient system architectures, and applied AI consulting.",
+    "ctaStart": "Start a Conversation",
+    "ctaGithub": "View GitHub",
+    "rights": "MATHEUS GRUBER · 2026 · ALL RIGHTS RESERVED",
+    "location": "SÃO PAULO · BR",
+    "stack": "NEXT.JS / TS / MCP"
+  },
+  "cv": {
+    "pageTitle": "Curriculum Vitae · Matheus Gruber",
+    "backLink": "Back to Portfolio",
+    "printBtn": "Print / Save as PDF",
+    "headline": "Fullstack Software Engineer & AI Systems Architect",
+    "location": "Tatuí, São Paulo, Brazil · Remote Friendly (Singapore / Global)",
+    "summaryTitle": "PROFESSIONAL SUMMARY",
+    "summaryText": "Software Engineer with 3+ years of experience engineering high-concurrency enterprise platforms, autonomous AI agent workflows (MCP), and low-level runtime systems. Specialized in bridging responsive client interfaces with low-latency agentic execution loops and predictive AI models. Proven track record building end-to-end proprietary compilers, CLI orchestrators, and scalable BFF architectures.",
+    "competenciesTitle": "CORE COMPETENCIES",
+    "compLanguagesLabel": "Languages & Runtimes",
+    "compLanguagesVal": "TypeScript, JavaScript, Python, Go (Golang), Node.js, Bun, SQL, HTML5/CSS3.",
+    "compFrontendLabel": "Frontend & Interaction",
+    "compFrontendVal": "Next.js (App Router), React, Angular, Signals, Framer Motion, Tailwind CSS, Web Vitals, Keyboard Accessibility (WCAG 2.2).",
+    "compBackendLabel": "Backend & Architecture",
+    "compBackendVal": "FastAPI, Pydantic, Clean Architecture, BFF Pattern, REST APIs, WebSockets, SQL Server, PostgreSQL, Redis, Firebase.",
+    "compAiLabel": "Agentic AI & LLMs",
+    "compAiVal": "Model Context Protocol (MCP), LLM Tool/Function Calling, Context Pruning, Local Inference (Ollama), RAG Pipelines, OpenAI / Gemini / Claude APIs.",
+    "compSystemsLabel": "Systems Computing",
+    "compSystemsVal": "Lexical Parsing, Abstract Syntax Trees (AST), Bytecode Emission, JIT VM Concepts, Low-Latency Event Loops.",
+    "experienceTitle": "PROFESSIONAL EXPERIENCE",
+    "projectsTitle": "FEATURED SYSTEMS & RELEASES",
+    "educationTitle": "EDUCATION & CONTINUOUS LEARNING",
+    "languagesTitle": "LANGUAGES",
+    "langPt": "Portuguese: Native",
+    "langEn": "English: Professional Working Proficiency (Technical Communication & International Collaboration)"
+  }
+}

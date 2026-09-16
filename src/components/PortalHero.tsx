@@ -3,10 +3,12 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export default function PortalHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
+  const t = useTranslations('hero');
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -58,7 +60,7 @@ export default function PortalHero() {
         >
           <Image
             src="/images/IMG_2250.jpg"
-            alt="Matheus Gruber - Arquiteto de Sistemas e Especialista em IA Aplicada"
+            alt={t('imageAlt')}
             fill
             priority
             className="object-cover object-[center_35%] grayscale-[35%] contrast-[1.08] brightness-[0.75]"
@@ -155,7 +157,7 @@ export default function PortalHero() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#3FA2AD]" />
               </span>
               <span className="text-[#EDE7DC] text-[9.5px] sm:text-[10.5px] font-medium tracking-[0.12em]">
-                DISPONÍVEL PARA DESAFIOS & CONSULTORIA
+                {t('availableBadge')}
               </span>
             </div>
           </div>
@@ -163,11 +165,11 @@ export default function PortalHero() {
           {/* Bottom Row */}
           <div className="flex items-center justify-between font-body text-[10px] sm:text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9EA5A8]">
             <div className="flex items-center gap-2">
-              <span>TATUÍ, SP · BR · 2026</span>
+              <span>{t('location')}</span>
             </div>
             <div className="flex items-center gap-2 text-[#EDE7DC]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8913C]" />
-              <span>ROLE PARA DESVENDAR ↓</span>
+              <span>{t('scrollHint')}</span>
             </div>
           </div>
         </motion.div>

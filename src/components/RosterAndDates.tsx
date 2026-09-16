@@ -1,4 +1,6 @@
-"use client";
+'use client';
+
+import { useTranslations } from 'next-intl';
 
 interface RosterItem {
   tag: string;
@@ -16,129 +18,16 @@ interface DateEntry {
   skills: string[];
 }
 
-const ROSTER_ITEMS: RosterItem[] = [
-  {
-    tag: "ESPECIALIDADE 01",
-    name: "Arquitetura Fullstack & Microsserviços",
-    metric: "03+ ANOS EM PRODUÇÃO",
-    description:
-      "Desenho de arquitetura de software ponta a ponta: separação rigorosa de responsabilidades entre frontend e backend através de camadas BFF (Backend-for-Frontend), contratos de API fortemente tipados e desacoplamento de serviços para garantir escalabilidade sob alta concorrência.",
-    appliedTechs:
-      "Next.js · Angular · Python / FastAPI · TypeScript · REST / gRPC",
-  },
-  {
-    tag: "ESPECIALIDADE 02",
-    name: "Interfaces de Alta Precisão & Engenharia Frontend",
-    metric: "CORE WEB VITALS",
-    description:
-      "Construção de interfaces modernas com fidelidade visual de alto padrão: eliminação de layouts genéricos, fluidez nas micro-interações táteis, acessibilidade WCAG 2.2 e otimização profunda de métricas de performance web (LCP, INP, CLS).",
-    appliedTechs:
-      "Tailwind CSS · Framer Motion · Component Architecture · Web Vitals",
-  },
-  {
-    tag: "ESPECIALIDADE 03",
-    name: "Inteligência Artificial Aplicada & Protocolo MCP",
-    metric: "AGENTES EM PRODUÇÃO",
-    description:
-      "Implementação de soluções inteligentes que transcendem chatbots simples: arquitetura de pipelines RAG (Retrieval-Augmented Generation), integração de ferramentas dinâmicas via protocolo MCP (Model Context Protocol) e orquestração de fluxos multi-modelo determinísticos.",
-    appliedTechs:
-      "MCP Protocol · Gemini API · OpenAI · Ollama Local · RAG Pipelines",
-  },
-  {
-    tag: "ESPECIALIDADE 04",
-    name: "Engenharia de Dados Relacionais & Performance SQL",
-    metric: "BANCOS ENTERPRISE",
-    description:
-      "Administração e tuning de bancos de dados de missão crítica: modelagem de esquemas relacionais, isolamento estrito de transações ACID em ambientes corporativos e reescrita de stored procedures para acelerar rotinas financeiras e de faturamento.",
-    appliedTechs:
-      "SQL Server · Índices & Query Tuning · Modelagem Relacional · Transações ACID",
-  },
-  {
-    tag: "ESPECIALIDADE 05",
-    name: "Compiladores, AST & Runtimes de Baixo Nível",
-    metric: "SISTEMAS AUTORAIS EM GO",
-    description:
-      "Construção e domínio dos fundamentos da computação de sistemas: elaboração de analisadores léxicos (tokenizers), parsers sintáticos com geração de árvores AST, otimização de instruções em bytecode e desenvolvimento de máquina virtual (VM) para execução reativa de código.",
-    appliedTechs:
-      "Go · Parsing Léxico/Sintático · AST · JIT VM · Bytecode Design",
-  },
-];
-
-const DATES_ENTRIES: DateEntry[] = [
-  {
-    period: "2026 — PRESENTE",
-    role: "Engenheiro de Software Fullstack",
-    organization: "Casa Publicadora Brasileira (CPB)",
-    summary:
-      "Liderança e atuação direta na modernização de legados corporativos. Desenho da camada BFF com FastAPI e Angular, arquitetura de novas aplicações em microsserviços e integração com diretórios corporativos LDAP / SSO de alta disponibilidade.",
-    skills: [
-      "Angular",
-      "TypeScript",
-      "Python",
-      "FastAPI",
-      "Clean Architecture",
-      "BFF",
-    ],
-  },
-  {
-    period: "2025 — ANDAMENTO",
-    role: "Pós-Graduação em Engenharia de IA Aplicada",
-    organization: "UNIPDS / Faculdade Anhanguera",
-    summary:
-      "Especialização avançada focada na arquitetura de sistemas inteligentes: engenharia de contexto, orquestração de agentes autônomos com execução de código, automação de tarefas via protocolo MCP e esteiras de recuperação contextual RAG.",
-    skills: [
-      "Model Context Protocol (MCP)",
-      "LLMs",
-      "RAG Pipelines",
-      "Agentes Autônomos",
-    ],
-  },
-  {
-    period: "2024 — 2026",
-    role: "Analista de Sistemas Júnior",
-    organization: "Casa Publicadora Brasileira (CPB)",
-    summary:
-      "Sustentação e evolução de rotinas em sistemas corporativos ERP e pontos de venda (PDV). Diagnóstico e otimização de queries em SQL Server para suporte a operações críticas de filiais em tempo real.",
-    skills: [
-      "SQL Server",
-      "ERPs Corporativos",
-      "Otimização Transacional",
-      "Automação",
-    ],
-  },
-  {
-    period: "2023 — 2024",
-    role: "Graduação em Análise e Desenvolvimento de Sistemas",
-    organization: "Universidade Cruzeiro do Sul",
-    summary:
-      "Formação acadêmica superior com foco rigoroso em engenharia de software, complexidade algorítmica, estruturas de dados de baixo nível, arquitetura de computadores e desenvolvimento web moderno.",
-    skills: [
-      "Estruturas de Dados",
-      "Algoritmos",
-      "Engenharia de Software",
-      "POO",
-    ],
-  },
-  {
-    period: "2023 — 2024",
-    role: "Assistente & Estagiário de TI",
-    organization: "Casa Publicadora Brasileira (CPB)",
-    summary:
-      "Administração e monitoramento de infraestrutura de redes, servidores locais Linux/Windows e transição técnica estruturada para a equipe de desenvolvimento interno de software.",
-    skills: [
-      "Infraestrutura",
-      "Redes Corporativas",
-      "Servidores Linux/Windows",
-    ],
-  },
-];
-
 export default function RosterAndDates() {
+  const t = useTranslations('roster');
+  const rosterItems = (t.raw('items') as RosterItem[]) || [];
+  const datesEntries = (t.raw('timeline') as DateEntry[]) || [];
+
   return (
     <section
       id="roster"
       className="relative py-28 bg-[#0A0C0E] border-t border-[rgba(237,231,220,0.13)]"
-      aria-label="Especialidades de Engenharia e Trajetória Profissional"
+      aria-label={t('skillsHeadline')}
     >
       <div className="shell-container space-y-24">
         {/* Section Header */}
@@ -146,22 +35,20 @@ export default function RosterAndDates() {
           <div className="flex items-center gap-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#3FA2AD]" />
             <span className="font-body text-[11px] font-semibold uppercase tracking-[0.15em] text-[#9EA5A8]">
-              [03 / ESPECIALIDADES & COMPETÊNCIAS TÉCNICAS]
+              {t('label')}
             </span>
           </div>
           <h2 className="font-display font-bold text-[clamp(30px,4.2vw,52px)] text-[#EDE7DC] leading-[1.08] tracking-[-0.025em]">
-            Especialidades de engenharia explicadas na prática.
+            {t('skillsHeadline')}
           </h2>
           <p className="font-body text-[15px] sm:text-[16.5px] text-[#9EA5A8] leading-relaxed max-w-[50ch]">
-            Entenda o que cada disciplina representa na prática: além de
-            ferramentas isoladas, o foco é aplicar padrões de arquitetura para
-            resolver problemas de escalabilidade, automação e confiabilidade.
+            {t('skillsParagraph')}
           </p>
         </div>
 
         {/* Part 1: Didactic Roster Rows */}
         <div className="border-t border-[rgba(237,231,220,0.13)] divide-y divide-[rgba(237,231,220,0.13)]">
-          {ROSTER_ITEMS.map((item) => (
+          {rosterItems.map((item) => (
             <div
               key={item.name}
               className="py-8 sm:py-9 space-y-3 hover:bg-[#101317]/40 transition-colors px-3 sm:px-4 rounded-sm"
@@ -189,7 +76,7 @@ export default function RosterAndDates() {
               {/* Applied Technologies Pill Strip */}
               <div className="pt-2 flex items-center gap-2">
                 <span className="font-body text-[10.5px] uppercase tracking-[0.12em] text-[#6C7378]">
-                  TECNOLOGIAS APLICADAS:
+                  {t('appliedTechLabel')}
                 </span>
                 <span className="font-body text-[11px] text-[#EDE7DC]/80 font-medium">
                   {item.appliedTechs}
@@ -199,16 +86,16 @@ export default function RosterAndDates() {
           ))}
         </div>
 
-        {/* Part 2: Dates Table (Trajetória e Marcos Didáticos) */}
+        {/* Part 2: Dates Table */}
         <div id="dates" className="space-y-8 pt-4">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-[rgba(237,231,220,0.13)] pb-4">
             <div>
               <div className="flex items-center gap-2 text-[#3FA2AD] text-[10.5px] font-body uppercase tracking-[0.14em] mb-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E8913C]" />
-                <span>LINHA DO TEMPO</span>
+                <span>{t('timelineTag')}</span>
               </div>
               <h3 className="font-display font-semibold text-[22px] sm:text-[28px] text-[#EDE7DC] tracking-[-0.02em]">
-                Marcos cronológicos e evolução na carreira
+                {t('timelineHeadline')}
               </h3>
             </div>
             <span className="font-body text-[11px] uppercase tracking-[0.14em] text-[#6C7378]">
@@ -221,20 +108,14 @@ export default function RosterAndDates() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-[rgba(237,231,220,0.13)] text-[10.5px] font-body uppercase tracking-[0.15em] text-[#6C7378]">
-                  <th className="pb-4 font-semibold w-[160px]">PERÍODO</th>
-                  <th className="pb-4 font-semibold w-[280px]">
-                    PAPEL / ORGANIZAÇÃO
-                  </th>
-                  <th className="pb-4 font-semibold">
-                    DESCRIÇÃO DIDÁTICA DO IMPACTO
-                  </th>
-                  <th className="pb-4 font-semibold w-[220px]">
-                    STACK PRINCIPAL
-                  </th>
+                  <th className="pb-4 font-semibold w-[160px]">{t('tablePeriod')}</th>
+                  <th className="pb-4 font-semibold w-[280px]">{t('tableRole')}</th>
+                  <th className="pb-4 font-semibold">{t('tableImpact')}</th>
+                  <th className="pb-4 font-semibold w-[220px]">{t('tableStack')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[rgba(237,231,220,0.08)]">
-                {DATES_ENTRIES.map((entry, index) => (
+                {datesEntries.map((entry, index) => (
                   <tr
                     key={index}
                     className="hover:bg-[#101317]/50 transition-colors align-top"
@@ -254,7 +135,7 @@ export default function RosterAndDates() {
                       {entry.summary}
                     </td>
                     <td className="py-6 font-body text-[11.5px] text-[#6C7378] leading-normal">
-                      {entry.skills.join(" · ")}
+                      {entry.skills.join(' · ')}
                     </td>
                   </tr>
                 ))}
@@ -264,7 +145,7 @@ export default function RosterAndDates() {
 
           {/* Mobile & Tablet Card List */}
           <div className="grid lg:hidden gap-6 divide-y divide-[rgba(237,231,220,0.1)]">
-            {DATES_ENTRIES.map((entry, index) => (
+            {datesEntries.map((entry, index) => (
               <div key={index} className="pt-6 space-y-3 first:pt-0">
                 <div className="flex items-center justify-between">
                   <span className="font-body text-[11px] font-bold text-[#3FA2AD] tracking-[0.08em]">

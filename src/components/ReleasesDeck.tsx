@@ -1,103 +1,57 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import { ArrowUpRight, Github, ExternalLink } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { WHATSAPP_LINK } from '@/lib/constants';
 
-interface ReleaseItem {
-  id: string;
-  code: string;
-  title: string;
-  subtitle: string;
-  stack: string;
-  impact: string;
-  details: string;
+interface ReleaseConfig {
+  id: 'openclaude' | 'harpia' | 'cpb-despesas' | 'meucpb' | 'monfintrack' | 'lamed' | 'landing-pages';
   githubUrl: string;
   image: string;
 }
 
-const RELEASES: ReleaseItem[] = [
+const RELEASE_CONFIGS: ReleaseConfig[] = [
   {
     id: 'openclaude',
-    code: 'RELEASE 01 · 2025/2026',
-    title: 'OpenClaude CLI',
-    subtitle: 'Orquestrador de Modelos de IA e Ferramentas MCP no Terminal',
-    stack: 'TypeScript · Node.js · Bun · Protocolo MCP · OpenAI / Gemini / Claude',
-    impact: 'Ambiente unificado de terminal para automação com inteligência artificial, conectando chamadas de ferramentas e múltiplos provedores sem fragmentação.',
-    details: 'Gerenciamento determinístico de contexto, execução de ferramentas locais e remotas via protocolo MCP e suporte a modelos locais (Ollama) e em nuvem.',
     githubUrl: 'https://github.com/mat-dgruber/openclaude',
     image: '/images/openclaude_banner_1785639308843.png',
   },
   {
     id: 'harpia',
-    code: 'RELEASE 02 · 2024/2025',
-    title: 'Harpia Language',
-    subtitle: 'Linguagem de Programação Reativa em Português com VM em Go',
-    stack: 'Go · Análise Léxica · Parser AST · Máquina Virtual JIT · CLI de Bytecode',
-    impact: 'Compilador autoral completo, transformando código de sintaxe nativa em árvore sintática abstrata e bytecodes executados em máquina virtual de alto desempenho.',
-    details: 'Propagação de sinais reativos, inferência estática de tipos, isolamento de escopo em baixo nível e conjunto de instruções em bytecode customizado.',
     githubUrl: 'https://github.com/mat-dgruber/harpia',
     image: '/images/harpia_banner_1785639324586.png',
   },
   {
     id: 'cpb-despesas',
-    code: 'RELEASE 03 · 2025/2026',
-    title: 'CPB Despesas',
-    subtitle: 'Sistema Corporativo de Gestão de Despesas Individuais',
-    stack: 'Angular · TypeScript · Python / FastAPI · SQL Server · Workflow de Aprovações',
-    impact: 'Plataforma enterprise para prestação de contas individuais, upload de comprovantes fiscais, auditoria em tempo real e esteira de aprovação multinível.',
-    details: 'Frontend reativo com formulários dinâmicos complexos, validação de notas fiscais, controle rigoroso de centro de custos e redução de 70% no tempo de conferência contábil.',
     githubUrl: 'https://github.com/mat-dgruber',
     image: '/images/fintech_banner_1785639390086.png',
   },
   {
     id: 'meucpb',
-    code: 'RELEASE 04 · 2026',
-    title: 'meuCPB Portal',
-    subtitle: 'Portal Corporativo com Padrão BFF (Backend-for-Frontend)',
-    stack: 'Angular · FastAPI · Python · SQL Server · LDAP / SSO Corporativo',
-    impact: 'Centralização de operações críticas empresariais, reduzindo a fricção entre microsserviços legados e novas aplicações de alta disponibilidade.',
-    details: 'Camada de orquestração BFF desacoplando regras de negócio corporativas, autenticação unificada via SSO e governança de permissões baseada em funções (RBAC).',
     githubUrl: 'https://github.com/mat-dgruber/meuCPB',
     image: '/images/lamed_banner_1785639364938.png',
   },
   {
     id: 'monfintrack',
-    code: 'RELEASE 05 · 2025',
-    title: 'monFinTrack',
-    subtitle: 'Plataforma Financeira Fullstack com Dashboards e IA Preditiva',
-    stack: 'Angular · TypeScript · Python / FastAPI · Firebase Auth · Gemini API',
-    impact: 'Plataforma empresarial de controle orçamentário com processamento assíncrono, autenticação segura em duas etapas (MFA) e categorização automática por IA.',
-    details: 'Arquitetura modular em Angular, backend reativo em FastAPI com validação estrita via Pydantic e insights preditivos de saúde financeira corporativa.',
     githubUrl: 'https://github.com/mat-dgruber/CCAT-monFinTrack',
     image: '/images/fintech_banner_1785639390086.png',
   },
   {
     id: 'lamed',
-    code: 'RELEASE 06 · 2024/2025',
-    title: 'Lamed Educational Platform',
-    subtitle: 'Plataforma Educacional com Arquitetura Offline-First',
-    stack: 'Python · FastAPI · PostgreSQL · Offline Sync · Frontend Reativo',
-    impact: 'Solução educacional desenvolvida para garantir continuidade pedagógica mesmo em cenários de conectividade instável, com sincronização assíncrona.',
-    details: 'Armazenamento e rastreamento de progresso local com mecanismo de reconciliação de dados ao reconectar, garantindo integridade e experiência fluida ao estudante.',
     githubUrl: 'https://github.com/mat-dgruber/lamed',
     image: '/images/lamed_banner_1785639364938.png',
   },
   {
     id: 'landing-pages',
-    code: 'RELEASE 07 · 2025/2026',
-    title: 'Landing Pages & Web Visuals',
-    subtitle: 'Páginas de Alta Conversão, Portfólios e Micro-Interações',
-    stack: 'Next.js / Angular · Tailwind CSS · Framer Motion · Core Web Vitals · SEO/AEO',
-    impact: 'Desenvolvimento de experiências web de alta fidelidade estética e conversão, com cases em produção como monFinTrack e mariaizabela.com.br.',
-    details: 'Arquitetura orientada a conversão (CRO), micro-interações a 60fps com aceleração por GPU, pontuação máxima no Google Lighthouse e indexação semântica rica para marcas e criadores.',
     githubUrl: 'https://mariaizabela.com.br',
     image: '/images/openclaude_banner_1785639308843.png',
   },
 ];
 
 export default function ReleasesDeck() {
+  const t = useTranslations('releases');
   const [deckOrder, setDeckOrder] = useState<number[]>([0, 1, 2, 3, 4, 5, 6]);
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -105,8 +59,22 @@ export default function ReleasesDeck() {
   const deckRef = useRef<HTMLDivElement>(null);
   const pointerStartRef = useRef<{ x: number; y: number } | null>(null);
 
+  const releases = useMemo(
+    () =>
+      RELEASE_CONFIGS.map((cfg) => ({
+        ...cfg,
+        code: t(`items.${cfg.id}.code`),
+        title: t(`items.${cfg.id}.title`),
+        subtitle: t(`items.${cfg.id}.subtitle`),
+        stack: t(`items.${cfg.id}.stack`),
+        impact: t(`items.${cfg.id}.impact`),
+        details: t(`items.${cfg.id}.details`),
+      })),
+    [t]
+  );
+
   const activeIndex = deckOrder[0];
-  const activeRelease = RELEASES[activeIndex];
+  const activeRelease = releases[activeIndex];
 
   const cycleNext = useCallback((direction: 'left' | 'right' = 'right') => {
     setThrownDirection(direction);
@@ -166,7 +134,7 @@ export default function ReleasesDeck() {
     <section
       id="releases"
       className="relative py-28 bg-[#0A0C0E] border-t border-[rgba(237,231,220,0.13)]"
-      aria-label="Catálogo de Sistemas e Cases Autorais"
+      aria-label={t('headline')}
     >
       <div className="shell-container grid lg:grid-cols-[1.1fr_0.9fr] items-center gap-16">
         {/* Left Column: Headline, Lede & Action Buttons */}
@@ -174,18 +142,16 @@ export default function ReleasesDeck() {
           <div className="flex items-center gap-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#3FA2AD]" />
             <span className="font-body text-[11px] font-semibold uppercase tracking-[0.15em] text-[#9EA5A8]">
-              [02 / CASES & SISTEMAS EM PRODUÇÃO]
+              {t('label')}
             </span>
           </div>
 
           <div className="space-y-4">
             <h2 className="font-display font-bold text-[clamp(30px,4.2vw,52px)] text-[#EDE7DC] leading-[1.08] tracking-[-0.025em]">
-              Sistemas e releases autorais construídos para escala.
+              {t('headline')}
             </h2>
             <p className="font-body text-[15px] sm:text-[16.5px] text-[#9EA5A8] leading-relaxed max-w-[50ch]">
-              O catálogo ao lado funciona como uma pilha física de cartas de engenharia. Cada projeto
-              resolve dores concretas: da criação de linguagens e compiladores à orquestração de
-              agentes com protocolo MCP e portais corporativos resilientes.
+              {t('paragraph')}
             </p>
           </div>
 
@@ -197,7 +163,7 @@ export default function ReleasesDeck() {
               className="font-body inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#EDE7DC] text-[#0A0C0E] text-[11px] font-bold uppercase tracking-[0.14em] hover:bg-white transition-colors"
             >
               <Github className="w-3.5 h-3.5" />
-              <span>Ver no GitHub</span>
+              <span>{t('githubBtn')}</span>
             </a>
 
             <a
@@ -206,16 +172,16 @@ export default function ReleasesDeck() {
               rel="noopener noreferrer"
               className="font-body inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[rgba(237,231,220,0.25)] text-[#EDE7DC] text-[11px] font-semibold uppercase tracking-[0.14em] hover:border-[#3FA2AD] hover:text-[#3FA2AD] transition-colors"
             >
-              <span>Conversar no WhatsApp</span>
+              <span>{t('whatsappBtn')}</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>
 
-          {/* Active Release Explanatory Box (Didático e Detalhado) */}
+          {/* Active Release Explanatory Box */}
           <div className="p-5 rounded-sm border border-[rgba(237,231,220,0.14)] bg-[#101317]/60 max-w-lg space-y-3">
             <div className="flex items-center justify-between text-[11px] font-body text-[#6C7378] tracking-[0.1em] uppercase pb-2 border-b border-[rgba(237,231,220,0.08)]">
               <span className="text-[#E8913C] font-semibold tracking-[0.12em]">{activeRelease.code}</span>
-              <span className="text-[#3FA2AD] font-semibold">ATIVO NO DECK</span>
+              <span className="text-[#3FA2AD] font-semibold">{t('activeBadge')}</span>
             </div>
             <div>
               <h3 className="font-display font-semibold text-[16px] text-[#EDE7DC]">
@@ -227,7 +193,7 @@ export default function ReleasesDeck() {
             </div>
             <div className="pt-2 border-t border-[rgba(237,231,220,0.08)]">
               <span className="block font-body text-[10.5px] uppercase tracking-[0.12em] text-[#6C7378] mb-1">
-                DETALHAMENTO ARQUITETURAL
+                {t('archDetailsLabel')}
               </span>
               <p className="font-body text-[12px] text-[#EDE7DC]/80 leading-normal">
                 {activeRelease.details}
@@ -249,10 +215,9 @@ export default function ReleasesDeck() {
             aria-label="Pilha interativa de projetos. Pressione as setas esquerda ou direita para descartar e alternar."
           >
             {deckOrder.map((releaseIdx, stackPosition) => {
-              const item = RELEASES[releaseIdx];
+              const item = releases[releaseIdx];
               const isTop = stackPosition === 0;
 
-              // Physical offsets for the stack (up to 4 visible tiers)
               const stackOffsets = [
                 { x: 0, y: 0, rotate: 0, scale: 1.0, zIndex: 40 },
                 { x: 12, y: -10, rotate: 2.2, scale: 0.96, zIndex: 30 },
@@ -262,7 +227,6 @@ export default function ReleasesDeck() {
 
               const cfg = stackOffsets[Math.min(stackPosition, 3)];
 
-              // Drag calculation for top card
               let currentX = cfg.x;
               let currentY = cfg.y;
               let currentRotate = cfg.rotate;
@@ -349,7 +313,7 @@ export default function ReleasesDeck() {
           {/* Hint Line & Progress Dots */}
           <div className="mt-8 flex flex-col items-center gap-3">
             <div className="flex items-center gap-2">
-              {RELEASES.map((_, idx) => (
+              {releases.map((_, idx) => (
                 <button
                   key={idx}
                   type="button"
@@ -371,7 +335,7 @@ export default function ReleasesDeck() {
 
             <div className="flex items-center gap-2 font-body text-[10.5px] uppercase tracking-[0.14em] text-[#6C7378]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E8913C]" />
-              <span>DESLIZE O CARD OU USE AS SETAS ← / →</span>
+              <span>{t('deckHint')}</span>
             </div>
           </div>
         </div>
